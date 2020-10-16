@@ -1,0 +1,23 @@
+{
+  "name": "TCC-Estacio",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/FFDuarte/TCC-Estacio.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/FFDuarte/TCC-Estacio/issues"
+  },
+  "homepage": "https://github.com/FFDuarte/TCC-Estacio#readme",
+  "dependencies": {
+    "tailwindcss": "^1.8.10"
+  }
+}
