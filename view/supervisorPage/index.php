@@ -3,8 +3,7 @@
                     'funcionarios'=>'funcionarios',
                     'rotas'=>'rotas',
                     'manutencao'=>'clientes',
-                    'inspecao'=>'inspecao',
-                    'veiculos'=>'veiculos'];
+                    'inspecao'=>'inspecao'];
     
                 
         $documentacao= ['relatorios'=>'relatorios',
@@ -20,7 +19,7 @@
         <meta name="viewport" content="width=device-width, initial-scale=1" />  
         <meta name="theme-color" content="#000000"/>
     
-        <link  href=<?php echo "\"http://" . $_SERVER['SERVER_NAME'] . "/TCC-Estacio-main/styles/style.css\"" ?> rel="stylesheet" type="text/css" media="screen"  >
+        <link  href=<?php echo "\"http://" . $_SERVER['SERVER_NAME'] . "/TCC-Estacio/styles/style.css\"" ?> rel="stylesheet" type="text/css" media="screen"  >
 
         <title>Pagina Supervisor</title>
     
@@ -61,12 +60,7 @@
                 } else {
                     $requisicao = 'inspecao';
                 }
-                if (isset($_GET['page'])) {
-                    $requisicao = $_GET['page'];
-                } else {
-                    $requisicao = 'veiculos';
-                }
-    
+               
                 switch($requisicao) {
                     case "funcionarios":
                         include(__DIR__."/funcionario.php");
@@ -82,10 +76,7 @@
                         break;         
                     case "inspecao":
                         include(__DIR__."/inspecao.php");
-                        break;  
-                    case "veiculos":
-                        include(__DIR__."/veiculos.php");
-                        break;              
+                        break;               
                     default:
                     include(__DIR__."/404.php");
                 }
