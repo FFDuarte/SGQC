@@ -3,12 +3,18 @@
                     'funcionarios'=>'funcionarios',
                     'rotas'=>'rotas',
                     'manutencao'=>'clientes',
-                    'inspecao'=>'inspecao'];
-    
+                    'inspecao'=>'inspecao',
+                    'veiculos' => 'veiculos',
+                    'decretos' => 'decretos'];
+        $pagina = ['rotas'=>'rotas',
+                   'veiculos' => 'veiculos',
+                   'decretos' => 'decretos'];
                 
         $documentacao= ['relatorios'=>'relatorios',
                         'laudos'=>'laudos',
                         'requisições'=>'requisições'];
+
+                        
     
     ?>
     <!DOCTYPE html>
@@ -60,6 +66,16 @@
                 } else {
                     $requisicao = 'inspecao';
                 }
+                if (isset($_GET['page'])) {
+                    $requisicao = $_GET['page'];
+                } else {
+                    $requisicao = 'veiculos';
+                }
+                if (isset($_GET['page'])) {
+                    $requisicao = $_GET['page'];
+                } else {
+                    $requisicao = 'decretos';
+                }
                
                 switch($requisicao) {
                     case "funcionarios":
@@ -76,7 +92,13 @@
                         break;         
                     case "inspecao":
                         include(__DIR__."/inspecao.php");
-                        break;               
+                        break;  
+                    case "veiculos":
+                        include(__DIR__."/veiculos.php");
+                        break;  
+                    case "decretos":
+                        include(__DIR__."/decretos.php");
+                         break;
                     default:
                     include(__DIR__."/404.php");
                 }
