@@ -8,8 +8,8 @@
 
   
     <div id="root">
-      <div class="relative  bg-gray-100">
-        <div class="relative bg-blue-300 md:pt-20 pb-32 ">
+      <div class="relative  ">
+        <div class="relative  md:pt-20 pb-32 ">
           <div class="px-4 md:px-10 mx-auto w-full">
             <div>
               <div class="flex flex-wrap">

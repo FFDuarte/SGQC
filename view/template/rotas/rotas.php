@@ -1,7 +1,7 @@
 <script src="https://cdn.jsdelivr.net/gh/alpinejs/alpine@v2.x.x/dist/alpine.js" defer></script>
 
             <?php
-			   include "../template/menuTransporte.php"
+			   include "../template/menu/menuTransporte.php"
 			?>
       
 <div class="container mx-auto py-6 px-10" x-data="datatables()" x-cloak>
@@ -33,7 +33,7 @@
 	</div>
 
 	<div class="overflow-x-auto bg-white rounded-lg shadow overflow-y-auto relative"
-		style="height: 405px;">
+		style="height: 500px;">
 		<table class="border-collapse table-auto w-full whitespace-no-wrap bg-white table-striped relative">
 			<thead>
 				<tr class="text-left">
@@ -48,27 +48,19 @@
 				<template x-for="user in users" :key="user.userId">
 					<tr>
 						
-						<td class="border-dashed border-t border-gray-200 userId">
-							<span class="text-gray-700 px-6 py-3 flex items-center" x-text="user.userId"></span>
+						<td class="border-dashed border-t border-gray-200 id">
+							<span class="text-gray-700 px-6 py-3 flex items-center" x-text="user.id"></span>
 						</td>
-						<td class="border-dashed border-t border-gray-200 firstName">
-							<span class="text-gray-700 px-6 py-3 flex items-center" x-text="user.firstName"></span>
+						<td class="border-dashed border-t border-gray-200 numerorota">
+							<span class="text-gray-700 px-6 py-3 flex items-center" x-text="user.numerorota"></span>
 						</td>
-						<td class="border-dashed border-t border-gray-200 lastName">
-							<span class="text-gray-700 px-6 py-3 flex items-center" x-text="user.lastName"></span>
+						<td class="border-dashed border-t border-gray-200 nomerota">
+							<span class="text-gray-700 px-6 py-3 flex items-center" x-text="user.nomerota"></span>
 						</td>
-						<td class="border-dashed border-t border-gray-200 emailAddress">
-							<span class="text-gray-700 px-6 py-3 flex items-center"
-								x-text="user.emailAddress"></span>
+						<td class="border-dashed border-t border-gray-200 km">
+							<span class="text-gray-700 px-6 py-3 flex items-center"x-text="user.km"></span>
 						</td>
-						<td class="border-dashed border-t border-gray-200 gender">
-							<span class="text-gray-700 px-6 py-3 flex items-center"
-								x-text="user.gender"></span>
-						</td>
-						<td class="border-dashed border-t border-gray-200 phoneNumber">
-							<span class="text-gray-700 px-6 py-3 flex items-center"
-								x-text="user.phoneNumber"></span>
-						</td>
+						
 					</tr>
 				</template>
 			</tbody>
@@ -81,65 +73,47 @@
 		return {
 			headings: [
 				{
-					'key': 'userId',
+					'key': 'id',
 					'value': ' ID'
 				},
 				{
-					'key': 'firstName',
-					'value': 'placa'
+					'key': 'numerorota',
+					'value': 'Nº'
 				},
 				{
-					'key': 'lastName',
-					'value': 'KM'
+					'key': 'nomerota',
+					'value': 'nomerota'
 				},
 				{
-					'key': 'emailAddress',
-					'value': '}n'
-				},
-				{
-					'key': 'gender',
-					'value': 'Gender'
-				},
-				{
-					'key': 'phoneNumber',
-					'value': 'Phone'
+					'key': 'km',
+					'value': 'km'
 				}
 			],
 			users: [{
-				"userId": 1,
-				"firstName": "Cort",
-				"lastName": "Tosh",
-				"emailAddress": "ctosh0@github.com",
-				"gender": "Male",
-				"phoneNumber": "327-626-5542"
+				"id": 1,
+				"numerorota": "024",
+				"nomerota": "Miguel Colto",
+				"km": "24.24"
 			}, {
-				"userId": 2,
-				"firstName": "Brianne",
-				"lastName": "Dzeniskevich",
-				"emailAddress": "bdzeniskevich1@hostgator.com",
-				"gender": "Female",
-				"phoneNumber": "144-190-8956"
+				"id": 1,
+				"numerorota": "666",
+				"nomerota": "Posse",
+				"km": "10.00"
 			}, {
-				"userId": 3,
-				"firstName": "Isadore",
-				"lastName": "Botler",
-				"emailAddress": "ibotler2@gmpg.org",
-				"gender": "Male",
-				"phoneNumber": "350-937-0792"
+				"id": 3,
+				"numerorota": "005",
+				"nomerota": "cort",
+				"km": "38.5"
 			}, {
-				"userId": 4,
-				"firstName": "Janaya",
-				"lastName": "Klosges",
-				"emailAddress": "jklosges3@amazon.de",
-				"gender": "Female",
-				"phoneNumber": "502-438-7799"
+				"id": 4,
+				"numerorota": "369",
+				"nomerota": "arma",
+				"km": "12.54"
 			}, {
-				"userId": 5,
-				"firstName": "Freddi",
-				"lastName": "Di Claudio",
-				"emailAddress": "fdiclaudio4@phoca.cz",
-				"gender": "Female",
-				"phoneNumber": "265-448-9627"
+				"id": 5,
+				"numerorota": "250",
+				"nomerota": "Tosh",
+				"km": "25.5"
 			}],
 			selectedRows: [],
 

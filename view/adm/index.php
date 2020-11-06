@@ -1,5 +1,6 @@
-    <?php
+<?php
         $paginas = ['dashboard'=>'dashboard',
+                    'funcionarios'=>'funcionarios',
                     'transporte'=>'transporte',
                     'manutencao'=>'clientes',
                     'inspecao'=>'inspecao'];
@@ -10,8 +11,9 @@
                    'motorista' => 'motorista',
                    'incremento' => 'incremento'];
                 
+        $documentacao= ['relatorios'=>'relatorios'];
+
         
-                    
     
     ?>
     <!DOCTYPE html>
@@ -31,10 +33,14 @@
           
         <!-- MENU -->
         <?php
-            include "../template/menu/menusuper.php";
+            include "../template/menu/menuadm.php";
+            
         ?>
+        
+
       
-        <div class="relative md:ml-48 bg-gradient-to-r from-gray-200 via-gray-400 to-gray-500 px-2">
+        <div class="relative md:ml-48  px-2" style = " background: linear-gradient(90deg, rgba(143,176,186,1) 0%, rgba(158,214,242,1) 45%, rgba(137,235,255,1) 100%);">
+   
          <!-- Area onde os eventos do MENU acontecem  -->
             <?php
     
@@ -52,6 +58,11 @@
                     $requisicao = $_GET['page'];
                 } else {
                     $requisicao = 'manutencao';
+                }
+                if (isset($_GET['page'])) {
+                    $requisicao = $_GET['page'];
+                } else {
+                    $requisicao = 'funcionarios';
                 }
                 if (isset($_GET['page'])) {
                     $requisicao = $_GET['page'];
@@ -85,32 +96,35 @@
                 }
                
                 switch($requisicao) {
+                    case "funcionarios":
+                        include   "../template/funcionario/funcionarioadm.php" ;
+                        break;
                     case "dashboard":
                         include   "../template/dashboard/dashboard.php" ;
                         break;
                     case "rotas":
-                        include   "../template/rotas/rotas.php" ;
+                        include "../template/rotas/rotas.php";
                         break;   
                     case "manutencao":
-                        include   "../template/manutencao/manutencao.php" ;
+                        include "../template/manutencao/manutencao.php";
                         break;         
                     case "inspecao":
-                        include   "../template/inspecao/inspecao.php" ;
+                        include  "../template/inspecao/inspecao.php";
                         break;  
                     case "veiculos":
-                        include   "../template/veiculos/veiculos.php" ;
+                        include "../template/veiculos/veiculos.php";
                         break;  
                     case "decretos":
                         include   "../template/decreto/decretos.php" ;
                          break;
                     case "transporte":
-                        include   "../template/rotas/rotas.php" ;
+                        include "../template/rotas/rotas.php";
                         break;
                     case "motorista":
                         include   "../template/motorista/motorista.php" ;
                         break;
                     case "incremento":
-                        include   "../template/incremento/incremento.php" ;
+                        include "../template/incremento/incremento.php";
                         break;    
                     default:
                     include(__DIR__."/404.php");

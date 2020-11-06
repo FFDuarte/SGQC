@@ -1,7 +1,7 @@
 <script src="https://cdn.jsdelivr.net/gh/alpinejs/alpine@v2.x.x/dist/alpine.js" defer></script>
 
             <?php
-			   include "../template/menuTransporte.php"
+			   include "../template/menu/menuTransporte.php"
 			?>
       
 	  <div class="container mx-auto py-6 px-10" x-data="datatables()" x-cloak>
@@ -34,7 +34,7 @@
 	</div>
 
 	<div class="overflow-x-auto bg-white rounded-lg shadow overflow-y-auto relative"
-		style="height: 405px;">
+		style="height: 500px;">
 		<table class="border-collapse table-auto w-full whitespace-no-wrap bg-white table-striped relative">
 			<thead>
 				<tr class="text-left">
