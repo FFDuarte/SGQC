@@ -1,34 +1,19 @@
 <script src="https://cdn.jsdelivr.net/gh/alpinejs/alpine@v2.x.x/dist/alpine.js" defer></script>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
 
            
-<script type="text/javascript">
-		$('#exampleModal').on('show.bs.modal', function (event) {
-		  var button = $(event.relatedTarget) // Button that triggered the modal
-		  var recipient = button.data('whatever') // Extract info from data-* attributes
-		  var recipientnome = button.data('whatevernome')
-		  var recipientdetalhes = button.data('whateverdetalhes')
-		  // If necessary, you could initiate an AJAX request here (and then do the updating in a callback).
-		  // Update the modal's content. We'll use jQuery here, but you could use a data binding library or other methods instead.
-		  var modal = $(this)
-		  modal.find('.modal-title').text('ID ' + recipient)
-		  modal.find('#id-curso').val(recipient)
-		  modal.find('#recipient-name').val(recipientnome)
-		  modal.find('#detalhes').val(recipientdetalhes)
-		  
-		})
-</script>
 
 	
 
 <?php
-include "C:\laragon\www\TCC-Estacio\banco\conexao.php"
+include "C:\laragon\www\TCC-Estacio\banco\conexao.php";
 
 ?>
 
 
 
 
-<div class="container mx-auto py-6 px-10" x-data="datatables()" x-cloak>
+<div class="container mx-auto py-6 px-10" >
     
     
 
@@ -157,9 +142,6 @@ include "C:\laragon\www\TCC-Estacio\banco\conexao.php"
 								<td class="bg-gray-200 sticky top-0 border-b border-gray-200 px-4 py-2 text-gray-600 font-bold tracking-wider uppercase text-xs"><?=$row['cpf']?></td>
 								<td class="bg-gray-200 sticky top-0 border-b border-gray-200 px-4 py-2 text-gray-600 font-bold tracking-wider uppercase text-xs"><?=$row['setor']?></td>
 								<td class="bg-gray-200 sticky top-0 border-b border-gray-200 px-4 py-2 text-gray-600 font-bold tracking-wider uppercase text-xs"></td>
-								<td class="bg-gray-200 sticky top-0 border-b border-gray-200 px-4 py-2 text-gray-600 font-bold tracking-wider uppercase text-xs">
-								 <?php include "editar.php"; ?>
-             					</td>
 								<td class="bg-gray-200 sticky top-0 border-b border-gray-200 px-4 py-2 text-gray-600  tracking-wider ">
 								        <form action="" method="POST">
 											<input type="hidden" name="id" value="
@@ -167,6 +149,9 @@ include "C:\laragon\www\TCC-Estacio\banco\conexao.php"
 											<button type="submit" class ="font-bold  uppercase text-xs" >Excluir</button>                      
 										</form>
 								</td> 
+								<td class="bg-gray-200 ">
+								 <?php include "editar.php"; ?>
+             					</td>
 							</tr>
 							<?php
 						}

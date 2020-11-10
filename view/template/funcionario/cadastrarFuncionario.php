@@ -1,3 +1,32 @@
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
+
+<script>
+
+$(document).ready(function(){
+				jQuery('#meuForm').submit(function(){
+
+						var dados = jQuery( this ).serialize();
+
+						$.ajax({
+
+							url: '../template/funcionario/cadastro.php',
+							cache: false,
+							data: dados,
+							type: "POST",
+
+                            success: function(msg){
+										document.getElementById('status').innerHTML = msg;
+
+										document.getElementById('status').style.background = '#000';
+							}
+						})
+				event.preventDefault();
+				});
+			}); 
+</script>
+
+
 <style>
 		.animated {
 			-webkit-animation-duration: 1s;
@@ -48,8 +77,7 @@
 
 	<div class="main-modal fixed w-full h-100 inset-0 z-50 overflow-hidden flex justify-center items-center animated fadeIn faster"
 		style="background: rgba(0,0,0,.7);">
-		<div
-			class="border border-teal-500 shadow-lg modal-container bg-white w-11/12 md:max-w-md mx-auto rounded shadow-lg z-50 overflow-y-auto">
+		<div class="border border-teal-500 shadow-lg modal-container bg-white w-11/12 md:max-w-md mx-auto rounded shadow-lg z-50 overflow-y-auto">
 			<div class="modal-content py-4 text-left px-6">
 				<!--Title-->
 				<div class="flex justify-between items-center pb-3">
@@ -64,67 +92,61 @@
 					</div>
 				</div>
 				<!--Body-->
-				<form class="w-full max-w-lg pt-6">
-					<div class="flex flex-wrap -mx-3 mb-4">
+				<section id="segura-items">
+					<form method="POST" id="meuForm" class="bg-white shadow-md rounded w-full px-10 pt-6 pb-8 mb-4">
 
-						<div class="w-full md:w-1/2 px-3 mb-6 md:mb-0">
-							<label class="block uppercase tracking-wide text-gray-700 text-xs font-bold mb-2" for="grid-first-name">
-								Nome
-							</label>
-							<input class="appearance-none block w-full bg-gray-200 text-gray-700 border rounded py-3 px-4 mb-3 leading-tight focus:outline-none focus:bg-white" id="grid-first-name" type="text" placeholder="nome">
-						</div>
-
-						<div class="w-full md:w-1/2 px-3 mb-6 md:mb-0">
-							<label class="block uppercase tracking-wide text-gray-700 text-xs font-bold mb-2" for="grid-first-name">
-								cpf
-							</label>
-							<input class="appearance-none block w-full bg-gray-200 text-gray-700 border rounded py-3 px-4 mb-3 leading-tight focus:outline-none focus:bg-white" id="grid-first-name" type="text" placeholder="cpf">
-						</div>				
-					</div>
-					<div class="flex flex-wrap -mx-3 mb-6">
-
-						<div class="w-full md:w-1/2 px-3 mb-6 md:mb-0">
-							<label class="block uppercase tracking-wide text-gray-700 text-xs font-bold mb-2" for="grid-first-name">
-								Matricula
-							</label>
-							<input class="appearance-none block w-full bg-gray-200 text-gray-700 border rounded py-3 px-4 mb-3 leading-tight focus:outline-none focus:bg-white" id="grid-first-name" type="text" placeholder="Matricula">
-						</div>
-
-						<div class="w-full md:w-1/3 px-3 mb-6 md:mb-0">
-						<label class="block uppercase tracking-wide text-gray-700 text-xs font-bold mb-2" for="grid-state">
-							Função
-						</label>
-						<div class="relative">
-							<select class="block appearance-none w-full bg-gray-200 border border-gray-200 text-gray-700 py-3 px-4 pr-8 rounded leading-tight focus:outline-none focus:bg-white focus:border-gray-500" id="grid-state">
-							<option>Aux Rotas</option>
-							<option>Aux Manutenção</option>
-							<option>Inspetor </option>
-							</select>
-							<div class="pointer-events-none absolute inset-y-0 right-0 flex items-center px-2 text-gray-700">
-							<svg class="fill-current h-4 w-4" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20"><path d="M9.293 12.95l.707.707L15.657 8l-1.414-1.414L10 10.828 5.757 6.586 4.343 8z"/></svg>
+                    
+						
+						<div class="flex flex-wrap -mx-3 mb-6"">
+							<div class="w-full px-3">
+							<input class="appearance-none block w-full bg-gray-200 text-gray-700 border border-gray-200 rounded py-3 px-4 mb-3 leading-tight focus:outline-none focus:bg-white focus:border-gray-500" type="text" name="nome" placeholder="Nome Completo"  required/>
 							</div>
 						</div>
+                        <div class="flex flex-wrap -mx-3 mb-6">
+							<div class="w-full md:w-1/2 px-3 mb-6 md:mb-0">
+								<input class="appearance-none block w-full bg-gray-200 text-gray-700 border border-gray-200 rounded py-3 px-4 mb-3 leading-tight focus:outline-none focus:bg-white"  type="text" placeholder="Matricula" name="matricula" required>
+							</div>
+							<div class="w-full md:w-1/2 px-3">
+								<input class="appearance-none block w-full bg-gray-200 text-gray-700 border border-gray-200 rounded py-3 px-4 leading-tight focus:outline-none focus:bg-white focus:border-gray-500"  type="text" placeholder="Cpf" name="cpf" required>
+							</div>
+					    </div>
+                        <div class="flex flex-wrap -mx-3 mb-6">
+							<div class="w-full px-3">
+							<input class="appearance-none block w-full bg-gray-200 text-gray-700 border border-gray-200 rounded py-3 px-4 mb-3 leading-tight focus:outline-none focus:bg-white focus:border-gray-500"  type="password" placeholder="senha" name="senha" required>
+							</div>
 						</div>
+						<div class="flex flex-wrap -mx-3 mb-2">
+							<div class="w-full md:w-1/2 px-2 mb-6 md:mb-0">
+							<input class="appearance-none block w-full bg-gray-200 text-gray-700 border border-gray-200 rounded py-3 px-4 leading-tight focus:outline-none focus:bg-white focus:border-gray-500"  type="text" placeholder="Setor" name="setor" required>
+							</div>
+							<div class="w-full md:w-1/2 px-6 mb-4 md:mb-0">
+								<div class="relative">
+									<select name="funcao" class="block appearance-none w-full bg-gray-200 border border-gray-200 text-gray-700 py-3 px-4 pr-8 rounded leading-tight focus:outline-none focus:bg-white focus:border-gray-500"  required>
 
-					</div>
-					
-					<div class="flex flex-wrap -mx-3 mb-6">
-						<div class="w-full px-3">
-						<label class="block uppercase tracking-wide text-gray-700 text-xs font-bold mb-2" for="grid-password">
-							Password
-						</label>
-						<input class="appearance-none block w-full bg-gray-200 text-gray-700 border border-gray-200 rounded py-3 px-4 mb-3 leading-tight focus:outline-none focus:bg-white focus:border-gray-500" id="grid-password" type="password" placeholder="******************">
-						<p class="text-gray-600 text-xs italic">Make it as long and as crazy as you'd like</p>
+											<option value="">Função</option>
+
+											<option value="ART">Aux de Rota</option>
+
+											<option value="ISP">Inspetor</option>
+
+											<option value="AMEC">Aux de Mecanica</option>
+
+											<option value="MEC">Mecanico</option>
+
+											<option value="MOT">Motorista</option>
+										</select>
+									<div class="pointer-events-none absolute inset-y-0 right-0 flex items-center px-2 text-gray-700">
+									<svg class="fill-current h-4 w-4" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20"><path d="M9.293 12.95l.707.707L15.657 8l-1.414-1.414L10 10.828 5.757 6.586 4.343 8z"/></svg>
+									</div>
+								</div>
+							</div>
 						</div>
-					</div>
-				</form>
-				<!--Footer-->
-				<div class="flex justify-end pt-6">
-					<button
-						class="focus:outline-none modal-close px-4 bg-gray-400 p-3 rounded-lg text-black hover:bg-gray-300">Cancelar</button>
-					<button
-						class="focus:outline-none modal-close px-4 bg-teal-500 p-3 ml-3 rounded-lg text-white hover:bg-teal-400">Confimar</button>
-				</div>
+						<div class="flex items-center justify-between">
+							<input class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline" type="submit" value="Enviar">
+						</div>
+					</form>
+				</section>
+					<span id="status"></span>
 			</div>
 		</div>
 	</div>

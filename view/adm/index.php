@@ -26,7 +26,7 @@
     
         <link  href=<?php echo "\"http://" . $_SERVER['SERVER_NAME'] . "/TCC-Estacio/styles/style.css\"" ?> rel="stylesheet" type="text/css" media="screen"  >
 
-        <title>Pagina Supervisor</title>
+        <title>ADM</title>
     
     </head>
     <body class="text-gray-800 antialiased">
