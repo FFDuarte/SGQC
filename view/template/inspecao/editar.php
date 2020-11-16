@@ -20,7 +20,7 @@ include "C:\laragon\www\TCC-Estacio\banco\conexao.php";
 			<div class="modal-content py-4 text-left px-6">
 				<!--Title-->
 				<div class="flex justify-between items-center pb-3">
-					<p class="text-2xl font-bold">Editar Funcionario</p>
+					<p class="text-2xl font-bold">Editar</p>
 					<div class="modal-close cursor-pointer z-50" @click="open = false">
 						<svg class="fill-current text-black" xmlns="http://www.w3.org/2000/svg" width="18" height="18"
 							viewBox="0 0 18 18">
@@ -31,32 +31,7 @@ include "C:\laragon\www\TCC-Estacio\banco\conexao.php";
 					</div>
 				</div>
 				<!--Body-->
-				<?php
-				// Aqui você se conecta ao banco
-				// Excuta uma consulta 
-				$sql = "SELECT * from funcionario where idFuncionario = $id";
-				$query = $conn->query($sql);
-				while ($dados = $query->fetch_assoc()) {
-				$id        = $dados["idFuncionario"];
-				$nome      = $dados["nome"];
-				$cpf       = $dados["cpf"];
-				$setor     = $dados["setor"];
-				$matricula = $dados["matricula"];
-				$funcao    = $dados["funcao"];
-			    }
-
-
-				?>
-				<form id="form1" name="form1" method="post" action="editar/editarFuncionario.php">
-					<input type="number" readonly name="id" id="id" value="<?php echo $id;?>" /><br>
-					<input type="text" name="nome" id="nome" value="<?php echo $nome;?>" /><br>
-					<input type="text" name="setor" id="setor" value="<?php echo $setor;?>" /><br>
-					<input type="number" name="cpf" id="cpf" value="<?php echo $cpf;?>" /><br>
-					<input type="text"  name="funcao" id="funcao" value="<?php echo $funcao;?>" /><br>
-					<input type="number" name="matricula" id="matricula" value="<?php echo $matricula;?>" /><br>
-
-					<input type="submit" onClick="return confirm('Deseja atualizar o registro?');" name="Submit" value="SALVAR ALTERAÇÕES" id="button-form" />
-				</form>
+				
 			</div>
 		</div>
 	</div>

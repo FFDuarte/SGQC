@@ -1,8 +1,6 @@
 <script src="https://cdn.jsdelivr.net/gh/alpinejs/alpine@v2.x.x/dist/alpine.js" defer></script>
 
-            <?php
-			   include "../template/menu/menuTransporte.php"
-			?>
+            
       
 	  <div class="container mx-auto py-6 px-10" x-data="datatables()" x-cloak>
     
@@ -28,34 +26,34 @@
 			<?php include "cadastroMotorista.php";?>
 	</div>
 
-	<div class="overflow-x-auto rounded-lg shadow overflow-y-auto relative bg-gray-200" style="height: 620px;">
+	<div class="overflow-x-auto rounded-lg shadow overflow-y-auto relative bg-gray-200" style="height: 500px;">
 		<table class="border-collapse table-auto w-full whitespace-no-wrap  table-striped relative bg-gray-200">
 			<thead >
 				<tr class="text-left ">
 			
 						<th class="bg-gray-500 sticky top-0 border-b border-gray-200 px-4 py-2 text-gray-900 font-bold tracking-wider uppercase text-xs">
-						Matricula
+						Motorista
 						</th>
 						<th class="bg-gray-500 sticky top-0 border-b border-gray-200 px-4 py-2 text-gray-900 font-bold tracking-wider uppercase text-xs">
-						Nome
+						Rota
 						</th>
 						<th class="bg-gray-500 sticky top-0 border-b border-gray-200 px-4 py-2 text-gray-900 font-bold tracking-wider uppercase text-xs">
-						Função
+						Veiculo
 						</th>
 						<th class="bg-gray-500 sticky top-0 border-b border-gray-200 px-4 py-2 text-gray-900 font-bold tracking-wider uppercase text-xs">
-						CPF
+						Data do incremento
 						</th>
 						<th class="bg-gray-500 sticky top-0 border-b border-gray-200 px-4 py-2 text-gray-900 font-bold tracking-wider uppercase text-xs">
-						Setor
+						Previsao de saida
 						</th>
 						<th class="bg-gray-500 sticky top-0 border-b border-gray-200 px-4 py-2 text-gray-900 font-bold tracking-wider uppercase text-xs">
-						Veiculos Operados
+						Previsao de chegada
 						</th>
 						<th class="bg-gray-500 sticky top-0 border-b border-gray-200 px-4 py-2 text-gray-900 font-bold tracking-wider uppercase text-xs">
-						ED
+						
 						</th>
 						<th class="bg-gray-500 sticky top-0 border-b border-gray-200 px-4 py-2 text-gray-900 font-bold tracking-wider uppercase text-xs">
-						EX
+						
 						</th>
 
 				</tr>

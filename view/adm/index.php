@@ -9,10 +9,12 @@
                    'veiculos' => 'veiculos',
                    'decretos' => 'decretos',
                    'motorista' => 'motorista',
-                   'incremento' => 'incremento'];
+                   'programacao' => 'programacao'];
                 
         $documentacao= ['relatorios'=>'relatorios'];
-
+        
+        $manutencao = ['manutencoes' => 'manutencoes',
+                       'requisicoes' => 'requisicoes'];
         
     
     ?>
@@ -39,7 +41,7 @@
         
 
       
-        <div class="relative md:ml-48  px-2" style = " background: linear-gradient(90deg, rgba(143,176,186,1) 0%, rgba(158,214,242,1) 45%, rgba(137,235,255,1) 100%);">
+        <div class="relative md:ml-48  bg-gradient-to-r from-gray-200 via-gray-400 to-gray-500 px-2">
    
          <!-- Area onde os eventos do MENU acontecem  -->
             <?php
@@ -92,7 +94,17 @@
                 if (isset($_GET['page'])) {
                     $requisicao = $_GET['page'];
                 } else {
-                    $requisicao = 'motorista';
+                    $requisicao = 'programacao';
+                }
+                if (isset($_GET['page'])) {
+                    $requisicao = $_GET['page'];
+                } else {
+                    $requisicao = 'requisicoes';
+                }
+                if (isset($_GET['page'])) {
+                    $requisicao = $_GET['page'];
+                } else {
+                    $requisicao = 'manutencoes';
                 }
                
                 switch($requisicao) {
@@ -123,9 +135,15 @@
                     case "motorista":
                         include   "../template/motorista/motorista.php" ;
                         break;
-                    case "incremento":
-                        include "../template/incremento/incremento.php";
-                        break;    
+                    case "programacao":
+                        include "../template/programacao/programacao.php";
+                        break;   
+                    case "requisicoes":
+                        include "../template/requisicao/requisicao.php";
+                        break; 
+                    case "manutencoes":
+                        include "../template/manutencao/manutencao.php";
+                        break;     
                     default:
                     include(__DIR__."/404.php");
                 }

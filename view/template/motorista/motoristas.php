@@ -1,9 +1,6 @@
 <script src="https://cdn.jsdelivr.net/gh/alpinejs/alpine@v2.x.x/dist/alpine.js" defer></script>
 
-            <?php
-			   include "../template/menu/menuTransporte.php"
-			?>
-      
+            
 	  <div class="container mx-auto py-6 px-10" x-data="datatables()" x-cloak>
     
     
@@ -28,7 +25,7 @@
 			<?php include "cadastroMotorista.php";?>
 	</div>
 
-	<div class="overflow-x-auto rounded-lg shadow overflow-y-auto relative bg-gray-200" style="height: 620px;">
+	<div class="overflow-x-auto rounded-lg shadow overflow-y-auto relative bg-gray-200" style="height: 500px;">
 		<table class="border-collapse table-auto w-full whitespace-no-wrap  table-striped relative bg-gray-200">
 			<thead >
 				<tr class="text-left ">

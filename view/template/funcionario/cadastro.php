@@ -9,14 +9,11 @@ $funcao = $_POST["funcao"];
 $cpf = $_POST["cpf"];
 $setor = $_POST["setor"];
 
-$sql = "INSERT INTO funcionario (nome, matricula,cpf,funcao,setor)  VALUES ('$nome', '$matricula','$cpf','$funcao','$setor') ";
+$query = "INSERT into `funcionario` (`nome`, `matricula`,`setor`,`funcao`,`cpf`) values ('$nome', '$matricula','$setor','$cpf','$funcao')";
 
-if ($conn->query($sql) === TRUE) {
-    echo "";
-  } else {
-    echo "Error: " . $sql . "<br>" . $conn->error;
-  }
+mysqli_query($conn, $query) or die(mysqli_error($conn));
+
+header("Location: index.php?page=funcionarios");
 ?>
-
 
 

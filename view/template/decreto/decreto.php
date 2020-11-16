@@ -1,9 +1,6 @@
 <script src="https://cdn.jsdelivr.net/gh/alpinejs/alpine@v2.x.x/dist/alpine.js" defer></script>
 
-            <?php
-			   include "../template/menu/menuTransporte.php"
-			?>
-      
+           
 	  <div class="container mx-auto py-6 px-10" x-data="datatables()" x-cloak>
     
     
@@ -37,7 +34,7 @@
 				   <!-- Card list container -->
 				   <div class="inline-block min-w-full  overflow-hidden   px-2 rounded-bl-lg rounded-br-lg ">
 					   <div class="sm:flex-1 sm:flex  sm:justify-between mt-2 work-sans"> 
-						   <div class="overflow-x-auto  rounded-lg shadow overflow-y-auto relative  bg-gray-300" style="height: 600px;">
+						   <div class="overflow-x-auto  rounded-lg shadow overflow-y-auto relative  bg-gray-300" style="height: 500px;">
 							   <table class="border-collapse table-auto w-full whitespace-no-wrap bg-white table-striped relative">
 								   <thead>
 									   <tr class="text-left">
@@ -75,7 +72,7 @@
 				   <!-- Card list container -->
 				   <div class="inline-block min-w-full px-4 overflow-hidden   rounded-bl-lg rounded-br-lg ">
 					   <div class="sm:flex-1 sm:flex r sm:justify-between mt-2 work-sans "> 
-						   <div class="overflow-x-auto  rounded-lg shadow overflow-y-auto relative  bg-gray-300" style="height: 600px;">
+						   <div class="overflow-x-auto  rounded-lg shadow overflow-y-auto relative  bg-gray-300" style="height: 500px;">
 							   <table class="border-collapse table-auto w-full whitespace-no-wrap bg-white table-striped relative">
 								   <thead>
 									   <tr class="text-left">

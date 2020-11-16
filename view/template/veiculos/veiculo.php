@@ -1,9 +1,6 @@
 <script src="https://cdn.jsdelivr.net/gh/alpinejs/alpine@v2.x.x/dist/alpine.js" defer></script>
 
-            <?php
-			   include "../template/menu/menuTransporte.php"
-			?>
-      
+            
 			<?php
 			include "C:\laragon\www\TCC-Estacio\banco\conexao.php";
 			?>
@@ -32,7 +29,7 @@
 
 	</div>
 
-	<div class="overflow-x-auto bg-white rounded-lg shadow overflow-y-auto relative"  style="height: 620px;">
+	<div class="overflow-x-auto bg-white rounded-lg shadow overflow-y-auto relative"  style="height: 500px;">
 		<table class="border-collapse table-auto w-full whitespace-no-wrap bg-white table-striped relative">
 		<thead>
 					<tr class="text-left">

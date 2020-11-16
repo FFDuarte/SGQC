@@ -7,7 +7,7 @@ include "C:\laragon\www\TCC-Estacio\banco\conexao.php";
  <div   x-data="{ open: false }">
 
 <!-- Button (blue), duh! -->
-	<button class="sticky top-0 border-b border-gray-200 px-4 py-2 text-gray-600 font-bold tracking-wider uppercase text-xs" @click="open = true"  >Editar</button>
+	<button class="sticky top-0 border-b border-gray-200 px-4 py-2 text-gray-600 font-bold tracking-wider uppercase text-xs" @click="open = true"  >Excluir</button>
 
 	<!-- Dialog (full screen) -->
 	<div class="absolute top-0 left-0 flex items-center justify-center w-full h-full"  x-show="open"  >
@@ -38,25 +38,19 @@ include "C:\laragon\www\TCC-Estacio\banco\conexao.php";
 				$query = $conn->query($sql);
 				while ($dados = $query->fetch_assoc()) {
 				$id        = $dados["idFuncionario"];
-				$nome      = $dados["nome"];
-				$cpf       = $dados["cpf"];
-				$setor     = $dados["setor"];
-				$matricula = $dados["matricula"];
-				$funcao    = $dados["funcao"];
+				$nome        = $dados["nome"];
+				$matricula        = $dados["matricula"];
+
+				
 			    }
-
-
 				?>
-				<form id="form1" name="form1" method="post" action="editar/editarFuncionario.php">
-					<input type="number" readonly name="id" id="id" value="<?php echo $id;?>" /><br>
-					<input type="text" name="nome" id="nome" value="<?php echo $nome;?>" /><br>
-					<input type="text" name="setor" id="setor" value="<?php echo $setor;?>" /><br>
-					<input type="number" name="cpf" id="cpf" value="<?php echo $cpf;?>" /><br>
-					<input type="text"  name="funcao" id="funcao" value="<?php echo $funcao;?>" /><br>
-					<input type="number" name="matricula" id="matricula" value="<?php echo $matricula;?>" /><br>
-
-					<input type="submit" onClick="return confirm('Deseja atualizar o registro?');" name="Submit" value="SALVAR ALTERAÇÕES" id="button-form" />
+				 <form id="form1" name="form1" method="POST" action="excluirFuncionario.php">
+				    <input type="number" class="hidden" name="id" id="id" value="<?php echo $id;?>" /><br>
+                    <p> Deseja Excluir o Funcionario <?php echo $nome;?> matricula <?php echo $matricula;?> ? </p>
+					<input type="submit"  name="Submit" value="Sim" id="button-form" />
 				</form>
+				<button @click="open = false">fechar</button>
+
 			</div>
 		</div>
 	</div>

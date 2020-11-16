@@ -1,6 +1,5 @@
-<script src="https://cdn.jsdelivr.net/gh/alpinejs/alpine@v2.x.x/dist/alpine.js" defer></script>
 
-          
+
 	<div class="container mx-auto py-6 px-10" x-data="datatables()" x-cloak>
     
     
@@ -19,67 +18,55 @@
 					</div>
 				</div>
 			</div>
-		    <?php include "novaInspecao.php";?>
 		</div>
 
-  
-		<div class="overflow-x-auto  rounded-lg shadow overflow-y-auto relative  bg-gray-300 mt-4" style="height: 620px;">
+		<?php include "realizarManutencao.php" ?>
+
+
+		<div class="overflow-x-auto  rounded-lg shadow overflow-y-auto relative  bg-gray-300 mt-4 m-8" style="height: 620px;">
 							   <table class="border-collapse table-auto w-full whitespace-no-wrap bg-white table-striped relative">
 								   <thead>
 									   <tr class="text-left">
 												   <th class="bg-gray-500 sticky top-0 border-b border-gray-200 px-4 py-2 text-gray-900 font-bold tracking-wider uppercase text-xs">
-												   Veiculo
+												   Tarefa
 												   </th>
 												   <th class="bg-gray-500 sticky top-0 border-b border-gray-200 px-4 py-2 text-gray-900 font-bold tracking-wider uppercase text-xs">
-												   Observação
+												   Detalhes
 												   </th>
 												   <th class="bg-gray-500 sticky top-0 border-b border-gray-200 px-4 py-2 text-gray-900 font-bold tracking-wider uppercase text-xs">
-												   Status
+												   Data da pedido
 												   </th>
 												   <th class="bg-gray-500 sticky top-0 border-b border-gray-200 px-4 py-2 text-gray-900 font-bold tracking-wider uppercase text-xs">
-											       Situação
+												   Responsavel
 												   </th>
 												   <th class="bg-gray-500 sticky top-0 border-b border-gray-200 px-4 py-2 text-gray-900 font-bold tracking-wider uppercase text-xs">
-											       
-												   </th>
-												   <th class="bg-gray-500 sticky top-0 border-b border-gray-200 px-4 py-2 text-gray-900 font-bold tracking-wider uppercase text-xs">
-											       
-												   </th>
-												   <th class="bg-gray-500 sticky top-0 border-b border-gray-200 px-4 py-2 text-gray-900 font-bold tracking-wider uppercase text-xs">
-											       
+											       Status
 												   </th>
 												   
+												   <th class="bg-gray-500 sticky top-0 border-b border-gray-200 px-4 py-2 text-gray-900 font-bold tracking-wider uppercase text-xs">
+												   </th>
+												 
+
 								   </tr>
 								   </thead>	
-									<tbody>
-									<!--align=center funciona somente com o td-->            
-												<tr >
-													<td class="bg-gray-200 sticky top-0 border-b border-gray-200 px-4 py-2 text-gray-600 font-bold tracking-wider uppercase text-xs">KBK2520</td>
-													<td class="bg-gray-200 sticky top-0 border-b border-gray-200 px-4 py-2 text-gray-600 font-bold tracking-wider uppercase text-xs">Veiculo precisando de reparos...</td>
-													<td class="bg-gray-200 sticky top-0 border-b border-gray-200 px-4 py-2 text-gray-600 font-bold tracking-wider uppercase text-xs">Reprovado</td>
-													<td class="bg-gray-200 sticky top-0 border-b border-gray-200 px-4 py-2 text-gray-600 font-bold tracking-wider uppercase text-xs">Temporatiamente Parado</td>
-
-													<td class="bg-gray-200 ">
-														<?php 
-															
-															include "manutencao.php";
-														?>
-													</td>
+								   <tbody>
+								   <tr >
+													<td class="bg-gray-200 sticky top-0 border-b border-gray-200 px-4 py-2 text-gray-600 font-bold tracking-wider uppercase text-xs"></td>
+													<td class="bg-gray-200 sticky top-0 border-b border-gray-200 px-4 py-2 text-gray-600 font-bold tracking-wider uppercase text-xs"></td>
+													<td class="bg-gray-200 sticky top-0 border-b border-gray-200 px-4 py-2 text-gray-600 font-bold tracking-wider uppercase text-xs"></td>
+													<td class="bg-gray-200 sticky top-0 border-b border-gray-200 px-4 py-2 text-gray-600 font-bold tracking-wider uppercase text-xs"></td>
+													<td class="bg-gray-200 sticky top-0 border-b border-gray-200 px-4 py-2 text-gray-600 font-bold tracking-wider uppercase text-xs"></td>
+													
+													
 													<td class="bg-gray-200 ">
 														<?php 
 															
 															include "editar.php";
 														?>
 													</td>
-													<td class="bg-gray-200 ">
-														<?php 
-															
-															include "excluir.php";
-														?>
-													</td>
-												</tr>
 												
-									</tbody>
+												</tr>
+								   </tbody>
 							   </table>
 						   </div> 
    
@@ -89,5 +76,7 @@
    </div>      
 </div>
 </div>
+
+
 
 

@@ -1,6 +1,6 @@
 <?php
-        $paginas = ['manutencoes' => 'manutencoes',
-                    'requicoes'=>'requicoes'];
+        $paginas = ['inspecao' => 'inspecao',
+                    ];
    
                     
     
@@ -31,16 +31,13 @@
                 if (isset($_GET['page'])) {
                     $requisicao = $_GET['page'];
                 } else {
-                    $requisicao = 'manutencoes';
+                    $requisicao = 'inspecao';
                 }
 
                 switch($requisicao) {
-                    case "manutencoes":
-                        include   "../template/manutencao/manutencoes.php" ;
+                    case "inspecao":
+                        include   "../template/inspecao/inspecao.php" ;
                         break;
-                        case "requicoes":
-                            include   "../template/requisicao/requicoes.php" ;
-                            break;
                     default:
                     include(__DIR__."/404.php");
                 }

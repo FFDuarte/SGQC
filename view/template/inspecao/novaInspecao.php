@@ -72,7 +72,7 @@ $(document).ready(function(){
 	</style>
 
 	<div>
-		<button onclick="openModal()" class='rounded-lg inline-flex items-center bg-white hover:text-blue-500 focus:outline-none focus:shadow-outline text-gray-500 font-semibold py-2 px-2 md:px-4'>cadastrar</button>
+		<button onclick="openModal()" class='rounded-lg inline-flex items-center bg-white hover:text-blue-500 focus:outline-none focus:shadow-outline text-gray-500 font-semibold py-2 px-2 md:px-4'>Nova Inspecao</button>
 	</div>
 
 	<div class="main-modal fixed w-full h-100 inset-0 z-50 overflow-hidden flex justify-center items-center animated fadeIn faster"
@@ -95,20 +95,58 @@ $(document).ready(function(){
 				<section id="segura-items">
 					<form method="POST" id="meuForm" class="bg-white shadow-md rounded w-full px-10 pt-6 pb-8 mb-4">
 
-					<div class="flex flex-wrap -mx-3 mb-6">
-							<div class="w-full px-3">
-							<input class="appearance-none block w-full bg-gray-200 text-gray-700 border border-gray-200 rounded py-3 px-4 mb-3 leading-tight focus:outline-none focus:bg-white focus:border-gray-500" type="text" name="matricula" placeholder="Matricula"  required/>
-							</div>
-						</div>
-                          
-
-						<div class="flex flex-wrap -mx-3 mb-6">
-							<div class="w-full px-3">
-							<input class="appearance-none block w-full bg-gray-200 text-gray-700 border border-gray-200 rounded py-3 px-4 mb-3 leading-tight focus:outline-none focus:bg-white focus:border-gray-500" type="text" name="habilitacao" placeholder="Habilitação"  required/>
-							</div>
-						</div>
-                       
+                    
 						
+						<div class="flex flex-wrap -mx-3 mb-6"">
+							<div class="w-full px-3">
+							<input class="appearance-none block w-full bg-gray-200 text-gray-700 border border-gray-200 rounded py-3 px-4 mb-3 leading-tight focus:outline-none focus:bg-white focus:border-gray-500" type="text" name="nome" placeholder="Nome Completo"  required/>
+							</div>
+						</div>
+                        <div class="flex flex-wrap -mx-3 mb-6">
+							<div class="w-full md:w-1/2 px-3 mb-6 md:mb-0">
+								<input class="appearance-none block w-full bg-gray-200 text-gray-700 border border-gray-200 rounded py-3 px-4 mb-3 leading-tight focus:outline-none focus:bg-white"  type="text" placeholder="Matricula" name="matricula" required>
+							</div>
+							<div class="w-full md:w-1/2 px-3">
+								<input class="appearance-none block w-full bg-gray-200 text-gray-700 border border-gray-200 rounded py-3 px-4 leading-tight focus:outline-none focus:bg-white focus:border-gray-500"  type="text" placeholder="Cpf" name="cpf" required>
+							</div>
+					    </div>
+                        <div class="flex flex-wrap -mx-3 mb-6">
+							<div class="w-full px-3">
+							<input class="appearance-none block w-full bg-gray-200 text-gray-700 border border-gray-200 rounded py-3 px-4 mb-3 leading-tight focus:outline-none focus:bg-white focus:border-gray-500"  type="password" placeholder="senha" name="senha" required>
+							</div>
+						</div>
+						<div class="flex flex-wrap -mx-3 mb-2">
+							<div class="w-full md:w-1/2 px-2 mb-6 md:mb-0">
+							<input class="appearance-none block w-full bg-gray-200 text-gray-700 border border-gray-200 rounded py-3 px-4 leading-tight focus:outline-none focus:bg-white focus:border-gray-500"  type="text" placeholder="Setor" name="setor" required>
+							</div>
+							<div class="w-full md:w-1/2 px-6 mb-4 md:mb-0">
+								<div class="relative">
+									<select name="funcao" class="block appearance-none w-full bg-gray-200 border border-gray-200 text-gray-700 py-3 px-4 pr-8 rounded leading-tight focus:outline-none focus:bg-white focus:border-gray-500"  required>
+
+											<option value="">Função</option>
+
+											<option value="Aux de Frota">Aux de Frota</option>
+
+											<option value="Aux de Qualidade">Aux de Qualidade</option>
+
+											<option value="Inspetor">Inspetor</option>
+
+											<option value="Supervisor ">Supervisor</option>
+
+											<option value="Mecanico">Mecanico</option>
+
+											<option value="Ass de Frota">Ass de Frota</option>
+
+											<option value="Ass de Qualidade">Ass de Qualidade</option>
+
+											<option value="Motorista">Motorista</option>
+										</select>
+									<div class="pointer-events-none absolute inset-y-0 right-0 flex items-center px-2 text-gray-700">
+									<svg class="fill-current h-4 w-4" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20"><path d="M9.293 12.95l.707.707L15.657 8l-1.414-1.414L10 10.828 5.757 6.586 4.343 8z"/></svg>
+									</div>
+								</div>
+							</div>
+						</div>
 						<div class="flex items-center justify-between">
 							<input class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline" type="submit" value="Enviar">
 						</div>

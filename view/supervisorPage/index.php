@@ -1,16 +1,18 @@
     <?php
         $paginas = ['dashboard'=>'dashboard',
                     'transporte'=>'transporte',
-                    'manutencao'=>'clientes',
+                    'manutencao'=>'manutencao',
                     'inspecao'=>'inspecao'];
 
         $transporte = ['rotas'=>'rotas',
                    'veiculos' => 'veiculos',
                    'decretos' => 'decretos',
                    'motorista' => 'motorista',
-                   'incremento' => 'incremento'];
+                   'programacao' => 'programacao'];
                 
-        
+        $manutencao = ['manutencoes' => 'manutencoes',
+                       'requisicoes' => 'requisicoes'];
+            
                     
     
     ?>
@@ -31,7 +33,7 @@
           
         <!-- MENU -->
         <?php
-            include "../template/menu/menusuper.php";
+            include "../template/menu/menu.php";
         ?>
       
         <div class="relative md:ml-48 bg-gradient-to-r from-gray-200 via-gray-400 to-gray-500 px-2">
@@ -83,6 +85,21 @@
                 } else {
                     $requisicao = 'motorista';
                 }
+                if (isset($_GET['page'])) {
+                    $requisicao = $_GET['page'];
+                } else {
+                    $requisicao = 'programacao';
+                }
+                if (isset($_GET['page'])) {
+                    $requisicao = $_GET['page'];
+                } else {
+                    $requisicao = 'requisicao';
+                }
+                if (isset($_GET['page'])) {
+                    $requisicao = $_GET['page'];
+                } else {
+                    $requisicao = 'manutencoes';
+                }
                
                 switch($requisicao) {
                     case "dashboard":
@@ -110,8 +127,17 @@
                         include   "../template/motorista/motorista.php" ;
                         break;
                     case "incremento":
-                        include   "../template/incremento/incremento.php" ;
-                        break;    
+                        include   "../template/programacao/programacao.php" ;
+                        break; 
+                    case "manutencoes":
+                        include   "../template/manutencao/manutencao.php" ;
+                        break;     
+                    case "requisicoes":
+                        include   "../template/requisicao/requisicao.php" ;
+                        break;  
+                    case "programacao":
+                        include   "../template/programacao/programacao.php" ;
+                        break;                                   
                     default:
                     include(__DIR__."/404.php");
                 }

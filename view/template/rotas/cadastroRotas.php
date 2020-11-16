@@ -10,7 +10,7 @@ $(document).ready(function(){
 
 						$.ajax({
 
-							url: '../template/funcionario/cadastro.php',
+							url: '../template/rotas/inserir.php',
 							cache: false,
 							data: dados,
 							type: "POST",
@@ -95,22 +95,22 @@ $(document).ready(function(){
 				<section id="segura-items">
 					<form method="POST" id="meuForm" class="bg-white shadow-md rounded w-full px-10 pt-6 pb-8 mb-4">
 
-					<div class="flex flex-wrap -mx-3 mb-6">
-							<div class="w-full px-3">
-							<input class="appearance-none block w-full bg-gray-200 text-gray-700 border border-gray-200 rounded py-3 px-4 mb-3 leading-tight focus:outline-none focus:bg-white focus:border-gray-500" type="text" name="matricula" placeholder="Matricula"  required/>
-							</div>
-						</div>
-                          
-
 						<div class="flex flex-wrap -mx-3 mb-6">
 							<div class="w-full px-3">
-							<input class="appearance-none block w-full bg-gray-200 text-gray-700 border border-gray-200 rounded py-3 px-4 mb-3 leading-tight focus:outline-none focus:bg-white focus:border-gray-500" type="text" name="habilitacao" placeholder="Habilitação"  required/>
+							<input class="appearance-none block w-full bg-gray-200 text-gray-700 border border-gray-200 rounded py-3 px-4 mb-3 leading-tight focus:outline-none focus:bg-white focus:border-gray-500" type="text" name="nome_Rota" placeholder="Nome da Rota"  required/>
 							</div>
 						</div>
-                       
-						
+                        <div class="flex flex-wrap -mx-3 mb-6">
+							<div class="w-full md:w-1/2 px-3 mb-6 md:mb-0">
+								<input class="appearance-none block w-full bg-gray-200 text-gray-700 border border-gray-200 rounded py-3 px-4 mb-3 leading-tight focus:outline-none focus:bg-white"  type="text" placeholder="estado" name="estado" required>
+							</div>
+							<div class="w-full md:w-1/2 px-3">
+								<input class="appearance-none block w-full bg-gray-200 text-gray-700 border border-gray-200 rounded py-3 px-4 leading-tight focus:outline-none focus:bg-white focus:border-gray-500"  type="text" placeholder="Distancia" name="distancia" required>
+							</div>
+					    </div>
+
 						<div class="flex items-center justify-between">
-							<input class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline" type="submit" value="Enviar">
+							<input class="modal-close bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline" type="submit" value="Enviar">
 						</div>
 					</form>
 				</section>
