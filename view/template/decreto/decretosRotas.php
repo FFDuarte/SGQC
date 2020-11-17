@@ -1,4 +1,13 @@
 <script src="https://cdn.jsdelivr.net/gh/alpinejs/alpine@v2.x.x/dist/alpine.js" defer></script>
+
+            <?php
+			   include "../template/menu/menuDecretos.php"
+			?>
+<?php
+include "C:\laragon\www\TCC-Estacio\banco\conexao.php";
+
+?>
+<script src="https://cdn.jsdelivr.net/gh/alpinejs/alpine@v2.x.x/dist/alpine.js" defer></script>
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
 
            
@@ -38,10 +47,7 @@ include "C:\laragon\www\TCC-Estacio\banco\conexao.php";
 					</div>
 			    </form>
 			</div>
-			<?php
-			    include "cadastrarFuncionario.php"
-			?>
-
+			
 			
 		</div>
 
@@ -50,22 +56,20 @@ include "C:\laragon\www\TCC-Estacio\banco\conexao.php";
 				<thead>
 					<tr class="text-left">
 							<th class="bg-gray-500 sticky top-0 border-b border-gray-200 px-4 py-2 text-gray-900 font-bold tracking-wider uppercase text-xs">
-							Matricula
+							Nome Rota
 							</th>
 							<th class="bg-gray-500 sticky top-0 border-b border-gray-200 px-4 py-2 text-gray-900 font-bold tracking-wider uppercase text-xs">
-							Nome
+							Inciso
 							</th>
 							<th class="bg-gray-500 sticky top-0 border-b border-gray-200 px-4 py-2 text-gray-900 font-bold tracking-wider uppercase text-xs">
-							Função
+							Data de Criação
 							</th>
 							<th class="bg-gray-500 sticky top-0 border-b border-gray-200 px-4 py-2 text-gray-900 font-bold tracking-wider uppercase text-xs">
-							CPF
+							portaria
 							</th>
-							<th class="bg-gray-500 sticky top-0 border-b border-gray-200 px-4 py-2 text-gray-900 font-bold tracking-wider uppercase text-xs">
-							Setor
-							</th>
-							<th class="bg-gray-500 sticky top-0 border-b border-gray-200 px-4 py-2 text-gray-900 font-bold tracking-wider uppercase text-xs">
 							
+							<th class="bg-gray-500 sticky top-0 border-b border-gray-200 px-4 py-2 text-gray-900 font-bold tracking-wider uppercase text-xs">
+							descrição
 							</th>
 							<th class="bg-gray-500 sticky top-0 border-b border-gray-200 px-4 py-2 text-gray-900 font-bold tracking-wider uppercase text-xs">
 						
@@ -77,28 +81,20 @@ include "C:\laragon\www\TCC-Estacio\banco\conexao.php";
 				</thead>
 				<tbody>
 					<?php
-					$query = $conn->query("SELECT * FROM funcionario");
+					$query = $conn->query("SELECT * FROM decretos , rotas  WHERE id_Rotas = rotas_id_Rotas ");
 					foreach ($query as $row) { 
-					$id = $row['idFuncionario'];
+				
 					?>   
 							<!--align=center funciona somente com o td-->            
 							<tr >
-								<td class="bg-gray-200 sticky top-0 border-b border-gray-200 px-4 py-2 text-gray-600 font-bold tracking-wider uppercase text-xs"><?=$row['matricula']?></td>
-								<td class="bg-gray-200 sticky top-0 border-b border-gray-200 px-4 py-2 text-gray-600 font-bold tracking-wider uppercase text-xs"><?=$row['nome']?></td>
-								<td class="bg-gray-200 sticky top-0 border-b border-gray-200 px-4 py-2 text-gray-600 font-bold tracking-wider uppercase text-xs"><?=$row['funcao']?></td>
-								<td class="bg-gray-200 sticky top-0 border-b border-gray-200 px-4 py-2 text-gray-600 font-bold tracking-wider uppercase text-xs"><?=$row['cpf']?></td>
-								<td class="bg-gray-200 sticky top-0 border-b border-gray-200 px-4 py-2 text-gray-600 font-bold tracking-wider uppercase text-xs"> <?=$row['setor']?> </td>
-								<td class="bg-gray-200 ">
-								    <?php 
-										include "excluir.php";
-									?>
-								</td> 
-								<td class="bg-gray-200 ">
-									<?php 
-										
-								         include "editar.php";
-									 ?>
-             					</td>
+							    <td class="bg-gray-200 sticky top-0 border-b border-gray-200 px-4 py-2 text-gray-600 font-bold tracking-wider uppercase text-xs"><?=$row['nome_Rota']?></td>
+								<td class="bg-gray-200 sticky top-0 border-b border-gray-200 px-4 py-2 text-gray-600 font-bold tracking-wider uppercase text-xs"><?=$row['inciso']?></td>
+								<td class="bg-gray-200 sticky top-0 border-b border-gray-200 px-4 py-2 text-gray-600 font-bold tracking-wider uppercase text-xs"><?=$row['data_Dec']?></td>
+								<td class="bg-gray-200 sticky top-0 border-b border-gray-200 px-4 py-2 text-gray-600 font-bold tracking-wider uppercase text-xs"><?=$row['portaria']?></td>
+								<td class="bg-gray-200 sticky top-0 border-b border-gray-200 px-4 py-2 text-gray-600 font-bold tracking-wider uppercase text-xs"><?=$row['descricao']?></td>
+
+
+
 							</tr>
 							<?php
 						}

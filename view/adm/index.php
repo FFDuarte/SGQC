@@ -3,11 +3,11 @@
                     'funcionarios'=>'funcionarios',
                     'transporte'=>'transporte',
                     'manutencao'=>'clientes',
-                    'inspecao'=>'inspecao'];
+                    'inspecao'=>'inspecao',
+                    'decreto' => 'decreto'];
 
         $transporte = ['rotas'=>'rotas',
                    'veiculos' => 'veiculos',
-                   'decretos' => 'decretos',
                    'motorista' => 'motorista',
                    'programacao' => 'programacao'];
                 
@@ -15,6 +15,10 @@
         
         $manutencao = ['manutencoes' => 'manutencoes',
                        'requisicoes' => 'requisicoes'];
+
+        $decretos = ['decreto rotas' => 'rotas',
+                       'decreto veiculos' => 'veiculos'];
+
         
     
     ?>
@@ -51,62 +55,7 @@
                 } else {
                     $requisicao = 'dashboard';
                 }
-                if (isset($_GET['page'])) {
-                    $requisicao = $_GET['page'];
-                } else {
-                    $requisicao = 'rotas';
-                }
-                if (isset($_GET['page'])) {
-                    $requisicao = $_GET['page'];
-                } else {
-                    $requisicao = 'manutencao';
-                }
-                if (isset($_GET['page'])) {
-                    $requisicao = $_GET['page'];
-                } else {
-                    $requisicao = 'funcionarios';
-                }
-                if (isset($_GET['page'])) {
-                    $requisicao = $_GET['page'];
-                } else {
-                    $requisicao = 'inspecao';
-                }
-                if (isset($_GET['page'])) {
-                    $requisicao = $_GET['page'];
-                } else {
-                    $requisicao = 'veiculos';
-                }
-                if (isset($_GET['page'])) {
-                    $requisicao = $_GET['page'];
-                } else {
-                    $requisicao = 'decretos';
-                }
-                if (isset($_GET['page'])) {
-                    $requisicao = $_GET['page'];
-                } else {
-                    $requisicao = 'transporte';
-                }
-                if (isset($_GET['page'])) {
-                    $requisicao = $_GET['page'];
-                } else {
-                    $requisicao = 'motorista';
-                }
-                if (isset($_GET['page'])) {
-                    $requisicao = $_GET['page'];
-                } else {
-                    $requisicao = 'programacao';
-                }
-                if (isset($_GET['page'])) {
-                    $requisicao = $_GET['page'];
-                } else {
-                    $requisicao = 'requisicoes';
-                }
-                if (isset($_GET['page'])) {
-                    $requisicao = $_GET['page'];
-                } else {
-                    $requisicao = 'manutencoes';
-                }
-               
+
                 switch($requisicao) {
                     case "funcionarios":
                         include   "../template/funcionario/funcionarioadm.php" ;
@@ -126,8 +75,8 @@
                     case "veiculos":
                         include "../template/veiculos/veiculos.php";
                         break;  
-                    case "decretos":
-                        include   "../template/decreto/decretos.php" ;
+                    case "decreto":
+                        include   "../template/decreto/decretosVeiculos.php" ;
                          break;
                     case "transporte":
                         include "../template/rotas/rotas.php";
@@ -143,7 +92,13 @@
                         break; 
                     case "manutencoes":
                         include "../template/manutencao/manutencao.php";
-                        break;     
+                        break;   
+                    case "decreto veiculos":
+                        include "../template/decreto/decretosVeiculos.php";
+                        break;
+                    case "decreto rotas":
+                        include "../template/decreto/decretosRotas.php";
+                        break;  
                     default:
                     include(__DIR__."/404.php");
                 }

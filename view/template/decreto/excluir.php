@@ -20,7 +20,7 @@ include "C:\laragon\www\TCC-Estacio\banco\conexao.php";
 			<div class="modal-content py-4 text-left px-6">
 				<!--Title-->
 				<div class="flex justify-between items-center pb-3">
-					<p class="text-2xl font-bold">Excluir Funcionario</p>
+					<p class="text-2xl font-bold">Editar Funcionario</p>
 					<div class="modal-close cursor-pointer z-50" @click="open = false">
 						<svg class="fill-current text-black" xmlns="http://www.w3.org/2000/svg" width="18" height="18"
 							viewBox="0 0 18 18">
@@ -31,26 +31,7 @@ include "C:\laragon\www\TCC-Estacio\banco\conexao.php";
 					</div>
 				</div>
 				<!--Body-->
-				<?php
-				// Aqui você se conecta ao banco
-				// Excuta uma consulta 
-				$sql = "SELECT * from funcionario where idFuncionario = $id";
-				$query = $conn->query($sql);
-				while ($dados = $query->fetch_assoc()) {
-				$id        = $dados["idFuncionario"];
-				$nome        = $dados["nome"];
-				$matricula        = $dados["matricula"];
-
 				
-			    }
-				?>
-				 <form id="form1" name="form1" method="POST" action="excluirFuncionario.php">
-				    <input type="number" class="hidden" name="id" id="id" value="<?php echo $id;?>" /><br>
-                    <p> Deseja Excluir o Funcionario <?php echo $nome;?> matricula <?php echo $matricula;?> ? </p>
-					<input type="submit"  name="Submit" value="Sim" id="button-form" />
-				</form>
-				<button @click="open = false">fechar</button>
-
 			</div>
 		</div>
 	</div>

@@ -132,7 +132,7 @@ $(document).ready(function(){
                 
 
 						<div class="flex items-center justify-between">
-              <textarea data-ls-module="charCounter"class="appearance-none block w-full bg-gray-200 text-gray-700 border border-gray-200 rounded py-3 px-4 leading-tight focus:outline-none focus:bg-white focus:border-gray-500 mb-8"  maxlength="100"> </textarea>
+              <textarea data-ls-module="charCounter"class="appearance-none block w-full bg-gray-200 text-gray-700 border border-gray-200 rounded py-3 px-4 leading-tight focus:outline-none focus:bg-white focus:border-gray-500 mb-8"  maxlength="200"> </textarea>
             </div>
 					</form>
 				</section>
