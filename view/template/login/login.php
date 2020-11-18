@@ -4,12 +4,13 @@
 <?php
 			   include "../template/menu/menufuncionario.php"
 ?>
+
 <script>
   var closemodal = document.querySelectorAll('.modal-close')
   for (var i = 0; i < closemodal.length; i++) {
     closemodal[i].addEventListener('click', toggleModal)
   }
-onClick="window.print()"
+
 </script>
 	
 
@@ -46,7 +47,7 @@ include "C:\laragon\www\TCC-Estacio\banco\conexao.php";
 
 
 			<?php
-			    include "cadastrarFuncionario.php"
+			    include "criarLogin.php"
 			?>
 			
 
@@ -64,19 +65,10 @@ include "C:\laragon\www\TCC-Estacio\banco\conexao.php";
 							Matricula
 							</th>
 							<th class="bg-gray-500 sticky top-0 border-b border-gray-200 px-4 py-2 text-gray-900 font-bold tracking-wider uppercase text-xs">
-							Nome
+							Senha
 							</th>
 							<th class="bg-gray-500 sticky top-0 border-b border-gray-200 px-4 py-2 text-gray-900 font-bold tracking-wider uppercase text-xs">
-							Função
-							</th>
-							<th class="bg-gray-500 sticky top-0 border-b border-gray-200 px-4 py-2 text-gray-900 font-bold tracking-wider uppercase text-xs">
-							CPF
-							</th>
-							<th class="bg-gray-500 sticky top-0 border-b border-gray-200 px-4 py-2 text-gray-900 font-bold tracking-wider uppercase text-xs">
-							Setor
-							</th>
-							<th class="bg-gray-500 sticky top-0 border-b border-gray-200 px-4 py-2 text-gray-900 font-bold tracking-wider uppercase text-xs">
-							
+							status
 							</th>
 							<th class="bg-gray-500 sticky top-0 border-b border-gray-200 px-4 py-2 text-gray-900 font-bold tracking-wider uppercase text-xs">
 						
@@ -87,38 +79,10 @@ include "C:\laragon\www\TCC-Estacio\banco\conexao.php";
 					</tr>
 				</thead>
 				<tbody>
-					<?php
-					$query = $conn->query("SELECT * FROM funcionario");
-					foreach ($query as $row) { 
-					$id = $row['idFuncionario'];
-					?>   
-							<!--align=center funciona somente com o td-->            
-							<tr >
-								<td class="bg-gray-200 sticky top-0 border-b border-gray-200 px-4 py-2 text-gray-600 font-bold tracking-wider uppercase text-xs"><?=$row['matricula']?></td>
-								<td class="bg-gray-200 sticky top-0 border-b border-gray-200 px-4 py-2 text-gray-600 font-bold tracking-wider uppercase text-xs"><?=$row['nome']?></td>
-								<td class="bg-gray-200 sticky top-0 border-b border-gray-200 px-4 py-2 text-gray-600 font-bold tracking-wider uppercase text-xs"><?=$row['funcao']?></td>
-								<td class="bg-gray-200 sticky top-0 border-b border-gray-200 px-4 py-2 text-gray-600 font-bold tracking-wider uppercase text-xs"><?=$row['cpf']?></td>
-								<td class="bg-gray-200 sticky top-0 border-b border-gray-200 px-4 py-2 text-gray-600 font-bold tracking-wider uppercase text-xs"> <?=$row['setor']?> </td>
-								<td class="bg-gray-200 ">
-								    <?php 
-										include "excluir.php";
-									?>
-								</td> 
-								<td class="bg-gray-200 ">
-									<?php 
-										
-								         include "editar.php";
-									 ?>
-             					</td>
-							</tr>
-							<?php
-						}
-						?>	
+					
 				</tbody>
-				
 			</table>
 		</div>
-		<buttom onclick="javascript:window.print();" class="print"> imprimir</buttom>
-
+	
 </div>
 

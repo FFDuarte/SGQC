@@ -11,14 +11,15 @@
                    'motorista' => 'motorista',
                    'programacao' => 'programacao'];
                 
-        $documentacao= ['relatorios'=>'relatorios'];
-        
+      
         $manutencao = ['manutencoes' => 'manutencoes',
                        'requisicoes' => 'requisicoes'];
 
         $decretos = ['decreto rotas' => 'rotas',
                        'decreto veiculos' => 'veiculos'];
 
+        $funcionario   = [
+                          'funcionarios'=>'funcionarios','login' => 'login'];
         
     
     ?>
@@ -99,6 +100,9 @@
                     case "decreto rotas":
                         include "../template/decreto/decretosRotas.php";
                         break;  
+                    case "login":
+                        include "../template/login/login.php";
+                        break; 
                     default:
                     include(__DIR__."/404.php");
                 }

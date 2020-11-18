@@ -25,16 +25,8 @@ $conta = ['perfil' => 'perfil',
                             }
                         ?>
                           <br>  
-                        <span class="flex font-medium text-x text-gray-600 px-1 my-4 uppercase">Documentação</span>
-                        <?php
-                                foreach ($documentacao as $key => $value) {
-                                
-                                echo '<a href="?page='.$key.'" class="flex flex-row items-center h-12 px-4 rounded-lg text-gray-600 hover:bg-gray-100 ">'.ucfirst($key).' </a>';
-                                }
-                        ?>
-                        
-                        
-                        
+                      
+                          <br><br><br><br>
                         <br>
                         <span class="flex font-medium text-x text-gray-600 px-1 my-4 uppercase">conta</span>
 
