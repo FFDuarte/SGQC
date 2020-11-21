@@ -36,7 +36,7 @@
         <title>ADM</title>
     
     </head>
-    <body class="text-gray-800 antialiased">
+    <body class="text-gray-800 bg-gradient-to-r from-gray-200 via-gray-400 to-gray-500 px-2 antialiased">
           
         <!-- MENU -->
         <?php
@@ -46,7 +46,7 @@
         
 
       
-        <div class="relative md:ml-48  bg-gradient-to-r from-gray-200 via-gray-400 to-gray-500 px-2">
+        <div class="relative md:ml-48  ">
    
          <!-- Area onde os eventos do MENU acontecem  -->
             <?php
@@ -77,7 +77,7 @@
                         include "../template/veiculos/veiculos.php";
                         break;  
                     case "decreto":
-                        include   "../template/decreto/decretosVeiculos.php" ;
+                        include   "../template/decreto/veiculo/decretosVeiculos.php" ;
                          break;
                     case "transporte":
                         include "../template/rotas/rotas.php";
@@ -95,14 +95,26 @@
                         include "../template/manutencao/manutencao.php";
                         break;   
                     case "decreto veiculos":
-                        include "../template/decreto/decretosVeiculos.php";
+                        include "../template/decreto/veiculo/decretosVeiculos.php";
                         break;
                     case "decreto rotas":
-                        include "../template/decreto/decretosRotas.php";
+                        include "../template/decreto/rota/decretosRotas.php";
                         break;  
                     case "login":
                         include "../template/login/login.php";
                         break; 
+                    case "perfil":
+                        include "../template/perfil/perfil.php";
+                        break; 
+                    case "sair":
+          
+                        function logoff(){
+                            session_unset();
+                             header("Location: ../view/login/index.php");
+                         }
+                         break; 
+                                
+
                     default:
                     include(__DIR__."/404.php");
                 }

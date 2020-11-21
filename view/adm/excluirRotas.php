@@ -1,10 +1,12 @@
 <?php
 include "C:\laragon\www\TCC-Estacio\banco\conexao.php";
 
-$id = $_POST["id"];
+$nomerota = $_POST["nomerota"];
+$estado = $_POST["estado"];
 
 
-$sql = "DELETE FROM funcionario WHERE idFuncionario=$id";
+
+$sql = "DELETE FROM rotas WHERE estado ='$estado' and nome_Rota = '$nomerota' ";
 
 if (mysqli_query($conn, $sql)) {
     echo "Record deleted successfully";
@@ -12,5 +14,5 @@ if (mysqli_query($conn, $sql)) {
     echo "Error deleting record: " . mysqli_error($conn);
 }
 
-header("Location: index.php?page=funcionarios");
+header("Location: index.php?page=rotas");
 ?>

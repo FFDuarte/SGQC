@@ -5,7 +5,7 @@ include "C:\laragon\www\TCC-Estacio\banco\conexao.php";
 
 $distancia = $_POST["distancia"];
 $estado = $_POST["estado"];
-$nome_rota = $_POST["nome_Rota"];
+$nome_rota = $_POST["nome"];
 
 
 $query = "INSERT into `rotas` (`nome_Rota`, `estado`,`distancia`) values ('$nome_rota', '$estado','$distancia')";

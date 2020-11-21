@@ -3,20 +3,22 @@ include "C:\laragon\www\TCC-Estacio\banco\conexao.php";
 
 
 
-$nome = $_POST["nome"];
-$matricula = $_POST["matricula"];
-$funcao = $_POST["funcao"];
-$cpf = $_POST["cpf"];
-$setor = $_POST["setor"];
+$descricao = $_POST["descricao"];
+$veiculo = $_POST["veiculo"];
+$tempo = $_POST["tempo"];
 
-$sql = "INSERT  funcionario  nome='$nome' , cpf='$cpf' WHERE matricula='$matricula'";
+$sqlveiculo = $conn ->query("SELECT idVec FROM veiculo where placa = '$veiculo' ");
+$idveiculo= mysqli_fetch_array($sqlveiculo);
+$veiculo=$idveiculo['idVec'];
 
-if ($conn->query($sql) === TRUE) {
-    echo "";
-  } else {
-    echo "Error: " . $sql . "<br>" . $conn->error;
-  }
+
+
+
+$query = "INSERT into `reparo` (`Veiculo_idVec`, `descricaorep`,`tempo_decorrido` ) values ( '$veiculo' , '$descricao' , '$tempo' )";
+
+mysqli_query($conn, $query) or die(mysqli_error($conn));
+
+
 ?>
-
 
 

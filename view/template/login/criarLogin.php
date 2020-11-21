@@ -10,7 +10,7 @@ $(document).ready(function(){
 
 						$.ajax({
 
-							url: '../template/funcionario/cadastro.php',
+							url: '../template/login/cadastro.php',
 							cache: false,
 							data: dados,
 							type: "POST",
@@ -72,7 +72,7 @@ $(document).ready(function(){
 	</style>
 
 	<div>
-		<button onclick="openModal()" class='rounded-lg inline-flex items-center bg-white hover:text-blue-500 focus:outline-none focus:shadow-outline text-gray-500 font-semibold py-2 px-2 md:px-4'>Criar Login</button>
+		<button onclick="openModal()" class='rounded-lg absolute top-0 right-0  bg-white hover:text-blue-500 focus:outline-none focus:shadow-outline text-gray-500 font-semibold py-2 px-2 md:px-4'>Criar Login</button>
 	</div>
 
 	<div class="main-modal fixed w-full h-100 inset-0 z-50 overflow-hidden flex justify-center items-center animated fadeIn faster"
@@ -81,7 +81,7 @@ $(document).ready(function(){
 			<div class="modal-content py-4 text-left px-6">
 				<!--Title-->
 				<div class="flex justify-between items-center pb-3">
-					<p class="text-2xl font-bold">Criar Login</p>
+					<p class="text-2xl font-bold">Cadastrar Funcionario</p>
 					<div class="modal-close cursor-pointer z-50">
 						<svg class="fill-current text-black" xmlns="http://www.w3.org/2000/svg" width="18" height="18"
 							viewBox="0 0 18 18">
@@ -107,7 +107,7 @@ $(document).ready(function(){
                       
 						
 						<div class="flex items-center justify-between">
-							<input class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline" type="submit" value="Enviar">
+							<input class="modal-close bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline" type="submit" value="Enviar">
 						</div>
 					</form>
 				</section>

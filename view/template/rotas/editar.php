@@ -4,24 +4,24 @@ include "C:\laragon\www\TCC-Estacio\banco\conexao.php";
 ?>
 
  <!-- modal div -->
- <div   x-data="{ open: false }">
+ <div   x-data="{ open: false } ">
 
 <!-- Button (blue), duh! -->
-	<button class="sticky top-0 border-b border-gray-200 px-4 py-2 text-gray-600 font-bold tracking-wider uppercase text-xs" @click="open = true"  >Editar</button>
+	<button class="rounded-lg absolute top-0 right-0  bg-white hover:text-blue-500 focus:outline-none focus:shadow-outline text-gray-500 font-semibold py-2 px-4 mr-32  " @click="open = true"  >Editar</button>
 
 	<!-- Dialog (full screen) -->
 	<div class="absolute top-0 left-0 flex items-center justify-center w-full h-full"  x-show="open"  >
 
 		<!-- A basic modal dialog with title, body and one button to close -->
-		<div class="main-modal fixed w-full h-100 inset-0 z-50 overflow-hidden flex justify-center items-center animated fadeIn faster"
+		<div class="main-modal2 fixed w-full h-100 inset-0 z-50 overflow-hidden flex justify-center items-center animated fadeIn faster"
 		style="background: rgba(0,0,0,.7);">
 		<div
 			class="border border-teal-500 shadow-lg modal-container bg-white w-11/12 md:max-w-md mx-auto rounded shadow-lg z-50 overflow-y-auto">
-			<div class="modal-content py-4 text-left px-6">
+			<div class="modal-content2 py-4 text-left px-6">
 				<!--Title-->
 				<div class="flex justify-between items-center pb-3">
-					<p class="text-2xl font-bold">Editar Funcionario</p>
-					<div class="modal-close cursor-pointer z-50" @click="open = false">
+					<p class="text-2xl font-bold">Insira o nome e o estado da rota para altera-la</p>
+					<div class="modal-close2 cursor-pointer z-50" @click="open = false">
 						<svg class="fill-current text-black" xmlns="http://www.w3.org/2000/svg" width="18" height="18"
 							viewBox="0 0 18 18">
 							<path
@@ -34,25 +34,47 @@ include "C:\laragon\www\TCC-Estacio\banco\conexao.php";
 				<?php
 				// Aqui você se conecta ao banco
 				// Excuta uma consulta 
-				$sql = "SELECT * from rotas where id_Rotas = $id";
+				$sql = "SELECT * from rotas ";
 				$query = $conn->query($sql);
 				while ($dados = $query->fetch_assoc()) {
-				$id         = $dados["id_Rotas"];
-				$nome_rota  = $dados["nome_Rota"];
-				$distancia  = $dados["distancia"];
-				$estado     = $dados["estado"];
+				$id        = $dados["id_Rotas"];
+				$distancia        = $dados["distancia"];
+				$estado        = $dados["estado"];
+				$nomerota        = $dados["nome_Rota"];
+
+
+
+
+
 
 			    }
 
 
 				?>
 				<form id="form1" name="form1" method="post" action="editar/editarRota.php">
-					<input type="number"  name="id"        id="id"        value="<?php echo $id;?>" readonly  /><br>
-					<input type="text"    name="nome"      id="nome"      value="<?php echo $nome_rota;?>"    /><br>
-					<input type="number"  name="distancia" id="distancia" value="<?php echo $distancia;?>"    /><br>
-					<input type="text"    name="estado"    id="estado"    value="<?php echo $estado;?>"       /><br>
+					<input type="number" class="hidden" readonly name="id" id="id" value="<?php echo $id;?>" /><br>
 					
-					<input type="submit" onClick="return confirm('Deseja atualizar o registro?');" name="Submit" value="SALVAR ALTERAÇÕES" id="button-form" />
+                        <div class="flex flex-wrap -mx-3 mb-6">
+							
+							<div class="w-full md:w-1/2 px-3">
+							    <input class="appearance-none block w-full bg-gray-200 text-gray-700 border border-gray-200 rounded py-3 px-4 mb-3 leading-tight focus:outline-none focus:bg-white focus:border-gray-500" type="text" name="nome" id="nome" placeholder="Nome da Rota" value="<?php echo $nomerota;?>" /><br>
+							</div>	
+							<div class="w-full md:w-1/2 px-3 mb-6 md:mb-0">
+							    <input class="appearance-none block w-full bg-gray-200 text-gray-700 border border-gray-200 rounded py-3 px-4 mb-3 leading-tight focus:outline-none focus:bg-white focus:border-gray-500" type="text" name="estado" id="estado" placeholder="estado" value="<?php echo $estado;?>" /><br>
+							</div>
+						
+							<div class="w-full md:w-1/2 px-3 mb-6 md:mb-0">
+							    <input class="appearance-none block w-full bg-gray-200 text-gray-700 border border-gray-200 rounded py-3 px-4 mb-3 leading-tight focus:outline-none focus:bg-white focus:border-gray-500" type="number" name="distancia" id="distancia" placeholder ="distancia"  value="<?php echo $distancia;?>" /><br>
+							</div>
+						
+						
+							
+					    </div>
+						
+                      
+					<input type="submit" class="appearance-none block w-full bg-gray-200 text-gray-700 border border-gray-200 rounded py-3 px-4 mb-3 leading-tight focus:outline-none focus:bg-white focus:border-gray-500" onClick="return confirm('Deseja atualizar o registro?');" name="Submit" value="SALVAR ALTERAÇÕES" id="button-form" />
+					<span id="status"></span>
+
 				</form>
 			</div>
 		</div>

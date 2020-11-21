@@ -72,7 +72,7 @@ $(document).ready(function(){
 	</style>
 
 	<div>
-		<button onclick="openModal()" class='rounded-lg inline-flex items-center bg-white hover:text-blue-500 focus:outline-none focus:shadow-outline text-gray-500 font-semibold py-2 px-2 md:px-4'>cadastrar</button>
+		<button onclick="openModal()" class='rounded-lg absolute top-0 right-0  bg-white hover:text-blue-500 focus:outline-none focus:shadow-outline text-gray-500 font-semibold py-2 px-2 md:px-4'>cadastrar</button>
 	</div>
 
 	<div class="main-modal fixed w-full h-100 inset-0 z-50 overflow-hidden flex justify-center items-center animated fadeIn faster"
@@ -95,9 +95,9 @@ $(document).ready(function(){
 				<section id="segura-items">
 					<form method="POST" id="meuForm" class="bg-white shadow-md rounded w-full px-10 pt-6 pb-8 mb-4">
 
-					<div class="flex flex-wrap -mx-3 mb-6"">
+					    <div class="flex flex-wrap -mx-3 mb-6">
 							<div class="w-full px-3">
-							<input class="appearance-none block w-full bg-gray-200 text-gray-700 border border-gray-200 rounded py-3 px-4 mb-3 leading-tight focus:outline-none focus:bg-white focus:border-gray-500" type="text" name="nome" placeholder="Nome Completo"  required/>
+							<input class=" appearance-none block w-full bg-gray-200 text-gray-700 border border-gray-200 rounded py-3 px-4 mb-3 leading-tight focus:outline-none focus:bg-white focus:border-gray-500" type="text" name="nome" placeholder="Nome Completo"  required/>
 							</div>
 						</div>
                         <div class="flex flex-wrap -mx-3 mb-6">
@@ -105,8 +105,12 @@ $(document).ready(function(){
 								<input class="appearance-none block w-full bg-gray-200 text-gray-700 border border-gray-200 rounded py-3 px-4 mb-3 leading-tight focus:outline-none focus:bg-white"  type="text" placeholder="Matricula" name="matricula" required>
 							</div>
 							<div class="w-full md:w-1/2 px-3">
-								<input class="appearance-none block w-full bg-gray-200 text-gray-700 border border-gray-200 rounded py-3 px-4 leading-tight focus:outline-none focus:bg-white focus:border-gray-500"  type="text" placeholder="Cpf" name="cpf" required>
+								<input class="appearance-none block w-full bg-gray-200 text-gray-700 border border-gray-200 rounded py-3 px-4 leading-tight focus:outline-none focus:bg-white focus:border-gray-500"  type="number" placeholder="Cpf" name="cpf" required>
 							</div>
+							<div class="w-full md:w-1/2 px-3">
+								<input class="appearance-none block w-full bg-gray-200 text-gray-700 border border-gray-200 rounded py-3 px-4 leading-tight focus:outline-none focus:bg-white focus:border-gray-500"  type="number" placeholder="idade" name="idade" required>
+							</div>
+							
 					    </div>
                       
 						<div class="flex flex-wrap -mx-3 mb-2">
@@ -144,8 +148,9 @@ $(document).ready(function(){
      
 						
 						<div class="flex items-center justify-between">
-							<input class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline" type="submit" value="Enviar">
+							<input class="modal-close bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline" type="submit" value="Enviar" @click="open = false">
 						</div>
+						
 					</form>
 				</section>
 					<span id="status"></span>

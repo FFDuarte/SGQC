@@ -8,12 +8,14 @@ $matricula = $_POST["matricula"];
 $funcao = $_POST["funcao"];
 $cpf = $_POST["cpf"];
 $setor = $_POST["setor"];
+$idade = $_POST["idade"];
 
-$query = "INSERT into `funcionario` (`nome`, `matricula`,`setor`,`funcao`,`cpf`) values ('$nome', '$matricula','$setor','$cpf','$funcao')";
+
+$query = "INSERT into `funcionario` (`nome`, `matricula`,`setor`,`funcao`,`cpf`,`idade`) values ('$nome', '$matricula','$setor','$funcao','$cpf','$idade')";
 
 mysqli_query($conn, $query) or die(mysqli_error($conn));
 
-header("Location: index.php?page=funcionarios");
+
 ?>
 
 

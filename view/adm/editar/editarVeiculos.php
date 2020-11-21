@@ -4,17 +4,15 @@ include "C:\laragon\www\TCC-Estacio\banco\conexao.php";
 @ini_set('display_errors', '1');
 error_reporting(E_ALL);
 
-$id        = $_POST["idVec"];
 $placa     = $_POST["placa"];
-$registro  = $_POST["registro"];
 $chassi    = $_POST["chassi"];
 $ano       = $_POST["ano"];
 $cor       = $_POST["cor"];
-$motor     = $_POST["motor"];
-$suspensao = $_POST["suspensao"];
+$motor     = $_POST["moto"];
+$suspensao = $_POST["suspenssao"];
 $status    = $_POST["status"];
 
-$sql = "UPDATE veiculo SET placa='$placa' , registro_Veicular ='$registro' , chassi='$chassi' , ano='$ano' , cor='$cor' , motor='$motor' , suspensao = '$suspensao' , status_Vec ='$status' WHERE' idVec='$id'";
+$sql = "UPDATE veiculo SET   chassi='$chassi' , ano='$ano' , cor='$cor' , motor='$motor' , suspensao = '$suspensao' , status_Vec ='$status' WHERE placa='$placa' ";
 
 if ($conn->query($sql) === TRUE) {
   echo "Record updated successfully";

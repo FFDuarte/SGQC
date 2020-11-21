@@ -1,82 +1,111 @@
+<script src="https://cdn.jsdelivr.net/gh/alpinejs/alpine@v2.x.x/dist/alpine.js" defer></script>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
 
+	<?php
+				include "../template/menu/menuManutencao.php"
+	?>
 
-	<div class="container mx-auto py-6 px-10" x-data="datatables()" x-cloak>
+	<script>
+	var closemodal = document.querySelectorAll('.modal-close')
+	for (var i = 0; i < closemodal.length; i++) {
+		closemodal[i].addEventListener('click', toggleModal)
+	}
+	onClick="window.print()"
+	</script>
+
+	<?php
+	include "C:\laragon\www\TCC-Estacio\banco\conexao.php";
+
+	?>
+
+	<style type="text/css">
+		#pesquisaCliente{
+			width:500px;
+		}
+		#form_pesquisa{
+			margin-top:50px;
+		}
+	</style>
+	
+
+	<script type="text/javascript">
+	$(document).ready(function(){
+
+    //Aqui a ativa a imagem de load
+    function loading_show(){
+		$('#loading').html("").fadeIn('fast');
+    }
+    
+    //Aqui desativa a imagem de loading
+    function loading_hide(){
+        $('#loading').fadeOut('fast');
+    }       
     
     
-		<div class="mt-8 flex justify-between items-center">
-			<div class="flex-1 pr-4">
-				<div class="relative md:w-1/3">
-					<input type="search"class="w-full pl-10 pr-4 py-2 rounded-lg shadow focus:outline-none focus:shadow-outline text-gray-600 font-medium" placeholder="Search...">
-					<div class="absolute top-0 left-0 inline-flex items-center p-2">
-						<svg xmlns="http://www.w3.org/2000/svg" class="w-6 h-6 text-gray-400" viewBox="0 0 24 24"
-							stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round"
-							stroke-linejoin="round">
-							<rect x="0" y="0" width="24" height="24" stroke="none"></rect>
-							<circle cx="10" cy="10" r="7" />
-							<line x1="21" y1="21" x2="15" y2="15" />
-						</svg>
-					</div>
-				</div>
-			</div>
-		</div>
+    // aqui a função ajax que busca os dados em outra pagina do tipo html, não é json
+    function load_dados(valores, page, div)
+    {
+        $.ajax
+            ({
+                type: 'POST',
+                dataType: 'html',
+                url: page,
+                beforeSend: function(){//Chama o loading antes do carregamento
+		              loading_show();
+				},
+                data: valores,
+                success: function(msg)
+                {
+                    loading_hide();
+                    var data = msg;
+			        $(div).html(data).fadeIn();				
+                }
+            });
+    }
+    
+    //Aqui eu chamo o metodo de load pela primeira vez sem parametros para pode exibir todos
+    load_dados(null, 'pesquisaRequisicao.php', '#MostraPesq');
+    
+    
+    //Aqui uso o evento key up para começar a pesquisar, se valor for maior q 0 ele faz a pesquisa
+    $('#pesquisaCliente').keyup(function(){
+        
+        var valores = $('#form_pesquisa').serialize()//o serialize retorna uma string pronta para ser enviada
+        
+        //pegando o valor do campo #pesquisaCliente
+        var $parametro = $(this).val();
+        
+        if($parametro.length >= 1)
+        {
+            load_dados(valores, 'pesquisaRequisicao.php', '#MostraPesq');
+        }else
+        {
+            load_dados(null, 'pesquisaRequisicao.php', '#MostraPesq');
+        }
+    });
 
-		<?php include "realizarManutencao.php" ?>
+	});
+	</script>	
 
 
-		<div class="overflow-x-auto  rounded-lg shadow overflow-y-auto relative  bg-gray-300 mt-4 m-8" style="height: 620px;">
-							   <table class="border-collapse table-auto w-full whitespace-no-wrap bg-white table-striped relative">
-								   <thead>
-									   <tr class="text-left">
-												   <th class="bg-gray-500 sticky top-0 border-b border-gray-200 px-4 py-2 text-gray-900 font-bold tracking-wider uppercase text-xs">
-												   Tarefa
-												   </th>
-												   <th class="bg-gray-500 sticky top-0 border-b border-gray-200 px-4 py-2 text-gray-900 font-bold tracking-wider uppercase text-xs">
-												   Detalhes
-												   </th>
-												   <th class="bg-gray-500 sticky top-0 border-b border-gray-200 px-4 py-2 text-gray-900 font-bold tracking-wider uppercase text-xs">
-												   Data da pedido
-												   </th>
-												   <th class="bg-gray-500 sticky top-0 border-b border-gray-200 px-4 py-2 text-gray-900 font-bold tracking-wider uppercase text-xs">
-												   Responsavel
-												   </th>
-												   <th class="bg-gray-500 sticky top-0 border-b border-gray-200 px-4 py-2 text-gray-900 font-bold tracking-wider uppercase text-xs">
-											       Status
-												   </th>
-												   
-												   <th class="bg-gray-500 sticky top-0 border-b border-gray-200 px-4 py-2 text-gray-900 font-bold tracking-wider uppercase text-xs">
-												   </th>
-												 
+<div class="container mx-auto py-6 px-10 relative" >
+    
 
-								   </tr>
-								   </thead>	
-								   <tbody>
-								   <tr >
-													<td class="bg-gray-200 sticky top-0 border-b border-gray-200 px-4 py-2 text-gray-600 font-bold tracking-wider uppercase text-xs"></td>
-													<td class="bg-gray-200 sticky top-0 border-b border-gray-200 px-4 py-2 text-gray-600 font-bold tracking-wider uppercase text-xs"></td>
-													<td class="bg-gray-200 sticky top-0 border-b border-gray-200 px-4 py-2 text-gray-600 font-bold tracking-wider uppercase text-xs"></td>
-													<td class="bg-gray-200 sticky top-0 border-b border-gray-200 px-4 py-2 text-gray-600 font-bold tracking-wider uppercase text-xs"></td>
-													<td class="bg-gray-200 sticky top-0 border-b border-gray-200 px-4 py-2 text-gray-600 font-bold tracking-wider uppercase text-xs"></td>
-													
-													
-													<td class="bg-gray-200 ">
-														<?php 
-															
-															include "editar.php";
-														?>
-													</td>
-												
-												</tr>
-								   </tbody>
-							   </table>
-						   </div> 
-   
+
+		<div class="mb-4 relative">
 		   
-	   </div>
-	   
-   </div>      
+			<div class=" pr-2">
+		
+			</div>
+
+		
+		<div class="" style="height: 700px;">
+		 <?php
+			    include "listaRequisicao.php"
+			?>
+				
+		</div>
+		<buttom onclick="javascript:window.print();" class="print"> imprimir</buttom>
+
 </div>
-</div>
-
-
-
 

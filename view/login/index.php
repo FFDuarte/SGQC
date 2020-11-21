@@ -21,38 +21,21 @@
                   <div class="text-gray-500 text-center mb-3 font-bold">
                     <small>NETCONTABLE</small>
                   </div>
-                  <form>
-                    <div class="relative w-full mb-3">
-                      <label class="block uppercase text-gray-700 text-xs font-bold mb-2"for="grid-password">
-                        Login
-                      </label>
-                      <input type="email" class="px-3 py-3 placeholder-gray-400 text-gray-700 bg-white rounded text-sm shadow focus:outline-none focus:shadow-outline w-full" placeholder="Login" style="transition: all 0.15s ease 0s;"/>
-                    </div>
-                    <div class="relative w-full mb-3">
-                      <label class="block uppercase text-gray-700 text-xs font-bold mb-2" for="grid-password">
-                      Password
-                      </label>
-                      <input type="password"class="px-3 py-3 placeholder-gray-400 text-gray-700 bg-white rounded text-sm shadow focus:outline-none focus:shadow-outline w-full" placeholder="Password" style="transition: all 0.15s ease 0s;"/>
-                    </div>
-                    <div>
-                      <label class="inline-flex items-center cursor-pointer">
-                        <input id="customCheckLogin"type="checkbox"class="form-checkbox text-gray-800 ml-1 w-5 h-5"style="transition: all 0.15s ease 0s;"/>
-                        <span class="ml-2 text-sm font-semibold text-gray-700">
-                              Remember me
-                        </span>
-                      </label>
-                    </div>
-                    <div class="text-center mt-6">
-                      <button class="bg-gray-800 text-white active:bg-gray-600 text-sm font-bold uppercase px-6 py-3 rounded shadow hover:shadow-lg outline-none focus:outline-none mr-1 mb-1 w-full" type="button" style="transition: all 0.15s ease 0s;">
-                        Sign In
-                      </button>
-                    </div>
-                    <div class="text-center mt-6">
-                      <button class="bg-gray-400 text-white active:bg-gray-400 text-sm font-bold uppercase px-1 py-1 rounded shadow hover:shadow-lg outline-none focus:outline-none mr-1 mb-1 w-full" type="button" style="transition: all 0.15s ease 0s;">
-                        Esqueceu a senha?
-                      </button>
-                    </div>
-                  </form>
+              <form class="col s4" action="login.php"   method="post">
+                <h5>Evo System <br><small>faça o login</small></h5>
+                <label for="matricula">Email: </label>
+                <input type="matricula" name="matricula" class="form-control  input-sm chat-input" placeholder="matricula" value="" required><br>
+
+                <label for="password">Senha: </label>
+                <input type="senha" name="senha" value="" class="form-control input-sm chat-input" placeholder="sua senha"  required><br>
+
+
+                <div class="wrapper">
+                    <span class="group-btn">     
+                        <input class="btn btn-primary btn-md center-block" type="submit" name="submit" value="Entrar">
+                    </span>
+                </div>
+            </form>
                 </div>
               </div>
             </div>

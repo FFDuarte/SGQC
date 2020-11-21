@@ -1,12 +1,11 @@
 <?php
 
 $conta = ['perfil' => 'perfil',
-         'configuracoes' => 'configuracoes',
           'sair' => 'sair' ];
 
 ?>
 
-<nav class="md:left-0 md:block md:fixed md:top-0 md:bottom-0 md:overflow-y-auto md:flex-row md:flex-no-wrap md:overflow-hidden shadow-xl  flex flex-wrap items-center justify-between relative md:w-48 z-10 py-4 px-4">
+<nav class="bg-white md:left-0 md:block md:fixed md:top-0 md:bottom-0 md:overflow-y-auto md:flex-row md:flex-no-wrap md:overflow-hidden shadow-xl  flex flex-wrap items-center justify-between relative md:w-48 z-10 py-4 px-4">
         <div class="flex w-full max-w-xs   ">
                 <div class="md:flex-col md:items-stretch md:min-h-full md:flex-no-wrap px-0 flex flex-wrap items-center justify-between w-full mx-auto">
                         <div class="grid grid-cols-3  divide-gray-400 p-2 ">
