@@ -3,11 +3,54 @@ include "C:\laragon\www\TCC-Estacio\banco\conexao.php";
 
 ?>
 
+<style>
+		.animated {
+			-webkit-animation-duration: 0;
+			animation-duration: 0;
+			-webkit-animation-fill-mode: both;
+			animation-fill-mode: both;
+		}
+
+		.animated.faster {
+			-webkit-animation-duration: 0ms;
+			animation-duration: 0ms;
+		}
+
+		.fadeIn {
+			-webkit-animation-name: fadeIn;
+			animation-name: fadeIn;
+		}
+
+		.fadeOut {
+			-webkit-animation-name: fadeOut;
+			animation-name: fadeOut;
+		}
+
+		@keyframes fadeIn {
+			from {
+				opacity: 0;
+			}
+
+			to {
+				opacity: 0;
+			}
+		}
+
+		@keyframes fadeOut {
+			from {
+				opacity:0;
+			}
+
+			to {
+				opacity: 0;
+			}
+		}
+	</style>
  <!-- modal div -->
  <div   x-data="{ open: false } ">
 
 <!-- Button (blue), duh! -->
-	<button class="rounded-lg absolute top-0 right-0  bg-white hover:text-blue-500 focus:outline-none focus:shadow-outline text-gray-500 font-semibold py-2 px-4 mr-32  " @click="open = true"  >Editar</button>
+	<button class="rounded-lg absolute top-0 right-0  bg-white hover:text-blue-500 focus:outline-none focus:shadow-outline text-gray-500 font-semibold py-2 px-4 mr-24  " @click="open = true"  >Editar</button>
 
 	<!-- Dialog (full screen) -->
 	<div class="absolute top-0 left-0 flex items-center justify-center w-full h-full"  x-show="open"  >

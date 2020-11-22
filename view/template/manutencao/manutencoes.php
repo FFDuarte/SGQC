@@ -1,10 +1,7 @@
 <script src="https://cdn.jsdelivr.net/gh/alpinejs/alpine@v2.x.x/dist/alpine.js" defer></script>
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
 
-	<?php
-				include "../template/menu/menuManutencao.php"
-	?>
-
+	
 	<script>
 	var closemodal = document.querySelectorAll('.modal-close')
 	for (var i = 0; i < closemodal.length; i++) {
@@ -106,8 +103,7 @@
 			    include "editar.php"
 			?>
 			
-		
-
+			
 			<?php
 			    include "registrarManutencao.php"
 			?>

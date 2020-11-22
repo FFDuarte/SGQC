@@ -3,6 +3,49 @@ include "C:\laragon\www\TCC-Estacio\banco\conexao.php";
 
 ?>
 
+<style>
+		.animated {
+			-webkit-animation-duration: 0;
+			animation-duration: 0;
+			-webkit-animation-fill-mode: both;
+			animation-fill-mode: both;
+		}
+
+		.animated.faster {
+			-webkit-animation-duration: 0ms;
+			animation-duration: 0ms;
+		}
+
+		.fadeIn {
+			-webkit-animation-name: fadeIn;
+			animation-name: fadeIn;
+		}
+
+		.fadeOut {
+			-webkit-animation-name: fadeOut;
+			animation-name: fadeOut;
+		}
+
+		@keyframes fadeIn {
+			from {
+				opacity: 0;
+			}
+
+			to {
+				opacity: 0;
+			}
+		}
+
+		@keyframes fadeOut {
+			from {
+				opacity:0;
+			}
+
+			to {
+				opacity: 0;
+			}
+		}
+	</style>
  <!-- modal div -->
 
 <div   x-data="{ open: false }" >
@@ -23,7 +66,7 @@ include "C:\laragon\www\TCC-Estacio\banco\conexao.php";
 				<div class="modal2-content py-4 text-left px-8">
 					<!--Title-->
 					<div class="flex justify-between items-center pb-3">
-						<p class="text-2xl font-bold">Excluir</p>
+						<p class="text-xl font-bold text-gray-600">Informate a matricula.<br>  Informe os dados da requisição.</p>
 						<div class="modal-close2 cursor-pointer z-50" @click="open = false">
 							<svg class="fill-current text-black" xmlns="http://www.w3.org/2000/svg" width="18" height="18"
 								viewBox="0 0 18 18">
@@ -35,15 +78,27 @@ include "C:\laragon\www\TCC-Estacio\banco\conexao.php";
 					</div>
 					<!--Body-->
 					
-				    <form id="form1" name="form1" method="post" action="excluirFuncionario.php">
-						<Label class="appearance-none block w-full bg-gray-200 text-gray-700 border border-gray-200 rounded py-2 px-2 mb-2 leading-tight focus:outline-none focus:bg-white focus:border-gray-500"> Insira a matricula do funcionario que deseja excluir. </label>
-						<input type="number"  class="appearance-none block w-full bg-gray-200 text-gray-700 border border-gray-200 rounded py-2 px-2 mb-2 leading-tight focus:outline-none focus:bg-white focus:border-gray-500" name="matricula" id="matricula" ><br>
-						
-						
-								
-								
-						<input type="submit" class="appearance-none block w-full bg-gray-200 text-gray-700 border border-gray-200 rounded py-3 px-4 mb-3 leading-tight focus:outline-none focus:bg-white focus:border-gray-500" onClick="return confirm('Deseja excluir o funcionario ?');" name="Submit" value="excluir" id="button-form" />
-						<span id="status"></span>
+				    <form id="form1" name="form1" method="post" action="requisitaManutencao.php">
+					    
+                        <div class="flex flex-wrap -mx-3 mb-6">
+							<div class="w-full md:w-1/2 px-3 mb-6 md:mb-0">
+							<label class="appearance-none block text-xl  text-gray-600  rounded py-1 px-2 leading-tight 0">Matricula </label>
+								<input class="appearance-none block w-full bg-gray-200 text-gray-700 border border-gray-200 rounded py-3 px-4 mb-3 leading-tight focus:outline-none focus:bg-white"  type="text" placeholder="Matricula" name="matricula" required>
+							</div>
+							<div class="w-full md:w-1/2 px-3">
+							<label class="appearance-none block text-xl  text-gray-600  rounded py-1 px-2 leading-tight 0">Tarefa </label>
+								<input class="appearance-none block w-full bg-gray-200 text-gray-700 border border-gray-200 rounded py-3 px-4 leading-tight focus:outline-none focus:bg-white focus:border-gray-500"  type="text" placeholder="Tarefa" name="tarefa" required>
+							</div>
+							<div class="w-full md:w-1/2 px-3">
+							<label class="appearance-none block text-xl  text-gray-600  rounded py-1 px-2 leading-tight 0">Data </label>
+								<input class="appearance-none block w-full bg-gray-200 text-gray-700 border border-gray-200 rounded py-3 px-4 leading-tight focus:outline-none focus:bg-white focus:border-gray-500"  type="text" placeholder="Data" name="data" required>
+							</div>
+							<div class="w-full md:w-1/2 px-3">
+							<label class="appearance-none block text-xl  text-gray-600  rounded py-1 px-2 leading-tight 0">Detalhe </label>
+								<input class="appearance-none block w-full bg-gray-200 text-gray-700 border border-gray-200 rounded py-3 px-4 leading-tight focus:outline-none focus:bg-white focus:border-gray-500"  type="text" placeholder="Detalhe" name="detalhe" required>
+							</div>
+					    </div>
+						<input type="submit" class="py-4 appearance-none block w-full bg-gray-200 text-gray-700 border border-gray-200 rounded py-3 px-4 mb-3 leading-tight focus:outline-none focus:bg-white focus:border-gray-500" onClick="return confirm('Os dados estão corretos ?');" name="Submit" value="SALVAR ALTERAÇÕES" id="button-form" />
 
 				    </form>
 				</div>

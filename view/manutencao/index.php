@@ -2,7 +2,7 @@
         $paginas = ['manutencoes' => 'manutencoes',
                     'requicoes'=>'requicoes'];
    
-                    
+                     
     
     ?>
     <!DOCTYPE html>
@@ -18,14 +18,14 @@
         <title>Manutencão</title>
     
     </head>
-    <body class="text-gray-800 antialiased">
+    <body class="text-gray-800 bg-gradient-to-r from-gray-200 via-gray-400 to-gray-500 px-2 antialiased">
           
         <!-- MENU -->
         <?php
             include "../template/menu/menu.php";
         ?>
       
-        <div class="relative md:ml-48 bg-gradient-to-r from-gray-200 via-gray-400 to-gray-700 px-2">
+        <div class="relative md:ml-48 ">
          <!-- Area onde os eventos do MENU acontecem  -->
            <?php
                 if (isset($_GET['page'])) {
@@ -38,9 +38,15 @@
                     case "manutencoes":
                         include   "../template/manutencao/manutencoes.php" ;
                         break;
-                        case "requicoes":
-                            include   "../template/requisicao/requicoes.php" ;
-                            break;
+                    case "requicoes":
+                        include   "../template/requisicao/requicoes.php" ;
+                        break;
+                    case "perfil":
+                        include "../template/perfil/perfil.php";
+                        break; 
+                    case "sair";
+                        header("Location: ../login/index.php");
+                        break;
                     default:
                     include(__DIR__."/404.php");
                 }

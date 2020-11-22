@@ -3,13 +3,56 @@ include "C:\laragon\www\TCC-Estacio\banco\conexao.php";
 
 ?>
 
+<style>
+		.animated {
+			-webkit-animation-duration: 0;
+			animation-duration: 0;
+			-webkit-animation-fill-mode: both;
+			animation-fill-mode: both;
+		}
+
+		.animated.faster {
+			-webkit-animation-duration: 0ms;
+			animation-duration: 0ms;
+		}
+
+		.fadeIn {
+			-webkit-animation-name: fadeIn;
+			animation-name: fadeIn;
+		}
+
+		.fadeOut {
+			-webkit-animation-name: fadeOut;
+			animation-name: fadeOut;
+		}
+
+		@keyframes fadeIn {
+			from {
+				opacity: 0;
+			}
+
+			to {
+				opacity: 0;
+			}
+		}
+
+		@keyframes fadeOut {
+			from {
+				opacity:0;
+			}
+
+			to {
+				opacity: 0;
+			}
+		}
+	</style>
  <!-- modal div -->
 
 <div   x-data="{ open: false }" >
 
 <!-- Button (blue), duh! -->
    
-	<button class="rounded-lg absolute top-0 right-0  bg-white hover:text-blue-500 focus:outline-none focus:shadow-outline text-gray-500 font-semibold py-2 px-4 mr-56 md:px-4  " @click="open = true"  >Excluir</button>
+	<button class="rounded-lg absolute top-0 right-0  bg-white hover:text-blue-500 focus:outline-none focus:shadow-outline text-gray-500 font-semibold py-2 px-4 mr-40 md:px-4  " @click="open = true"  >Excluir</button>
 	
 
 	<!-- Dialog (full screen) -->
@@ -23,7 +66,7 @@ include "C:\laragon\www\TCC-Estacio\banco\conexao.php";
 				<div class="modal2-content py-4 text-left px-8">
 					<!--Title-->
 					<div class="flex justify-between items-center pb-3">
-						<p class="text-2xl font-bold appearance-none block w-full bg-gray-100 text-gray-500  leading-tight focus:outline-none focus:bg-white focus:border-gray-500">Informe o registro do reparo que deseja excluir</p>
+						<p class="text-2xl font-bold appearance-none block w-full  text-gray-500  leading-tight focus:outline-none focus:bg-white focus:border-gray-500">Informe o registro  que deseja excluir</p>
 						<div class="modal-close2 cursor-pointer z-50" @click="open = false">
 							<svg class="fill-current text-black" xmlns="http://www.w3.org/2000/svg" width="18" height="18"
 								viewBox="0 0 18 18">
@@ -36,6 +79,8 @@ include "C:\laragon\www\TCC-Estacio\banco\conexao.php";
 					<!--Body-->
 					
 				    <form id="form1" name="form1" method="post" action="excluirManutencao.php">
+					<label class="appearance-none block text-xl  text-gray-600  rounded py-1 px-2 leading-tight 0">Registro </label>
+
 						<input type="number"  class="appearance-none block w-full bg-gray-200 text-gray-700 border border-gray-200 rounded py-2 px-2 mb-2 leading-tight focus:outline-none focus:bg-white focus:border-gray-500" name="registro" id="registro" ><br>
 		
 						<input type="submit" class="appearance-none block w-full bg-gray-200 text-gray-700 border border-gray-200 rounded py-3 px-4 mb-3 leading-tight focus:outline-none focus:bg-white focus:border-gray-500" onClick="return confirm('Deseja excluir o funcionario ?');" name="Submit" value="excluir" id="button-form" />

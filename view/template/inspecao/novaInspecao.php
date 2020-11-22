@@ -10,7 +10,7 @@ $(document).ready(function(){
 
 						$.ajax({
 
-							url: '../template/funcionario/cadastro.php',
+							url: '../template/inspecao/cadastro.php',
 							cache: false,
 							data: dados,
 							type: "POST",
@@ -29,15 +29,15 @@ $(document).ready(function(){
 
 <style>
 		.animated {
-			-webkit-animation-duration: 1s;
-			animation-duration: 1s;
+			-webkit-animation-duration: 0;
+			animation-duration: 0;
 			-webkit-animation-fill-mode: both;
 			animation-fill-mode: both;
 		}
 
 		.animated.faster {
-			-webkit-animation-duration: 500ms;
-			animation-duration: 500ms;
+			-webkit-animation-duration: 0ms;
+			animation-duration: 0ms;
 		}
 
 		.fadeIn {
@@ -56,13 +56,13 @@ $(document).ready(function(){
 			}
 
 			to {
-				opacity: 1;
+				opacity: 0;
 			}
 		}
 
 		@keyframes fadeOut {
 			from {
-				opacity: 1;
+				opacity:0;
 			}
 
 			to {
@@ -81,7 +81,7 @@ $(document).ready(function(){
 			<div class="modal-content py-4 text-left px-6">
 				<!--Title-->
 				<div class="flex justify-between items-center pb-3">
-					<p class="text-2xl font-bold">Cadastrar Funcionario</p>
+					<p class="text-2xl font-bold text-gray-600">Realizar uma nova inspeção</p>
 					<div class="modal-close cursor-pointer z-50">
 						<svg class="fill-current text-black" xmlns="http://www.w3.org/2000/svg" width="18" height="18"
 							viewBox="0 0 18 18">
@@ -97,54 +97,21 @@ $(document).ready(function(){
 
 					    <div class="flex flex-wrap -mx-3 mb-6">
 							<div class="w-full px-3">
-							<input class=" appearance-none block w-full bg-gray-200 text-gray-700 border border-gray-200 rounded py-3 px-4 mb-3 leading-tight focus:outline-none focus:bg-white focus:border-gray-500" type="text" name="nome" placeholder="Nome Completo"  required/>
+							<label class="appearance-none block text-xl  text-gray-600  rounded py-1 px-2 leading-tight 0">Veiculo </label>
+							<input class=" appearance-none block w-full bg-gray-200 text-gray-700 border border-gray-200 rounded py-3 px-4 mb-3 leading-tight focus:outline-none focus:bg-white focus:border-gray-500" type="text" name="veiculo" placeholder="Veiculo"  required/>
 							</div>
 						</div>
                         <div class="flex flex-wrap -mx-3 mb-6">
 							<div class="w-full md:w-1/2 px-3 mb-6 md:mb-0">
-								<input class="appearance-none block w-full bg-gray-200 text-gray-700 border border-gray-200 rounded py-3 px-4 mb-3 leading-tight focus:outline-none focus:bg-white"  type="text" placeholder="Matricula" name="matricula" required>
+							<label class="appearance-none block text-xl  text-gray-600  rounded py-1 px-2 leading-tight 0">Obsevações </label>
+								<input class="appearance-none block w-full bg-gray-200 text-gray-700 border border-gray-200 rounded py-3 px-4 mb-3 leading-tight focus:outline-none focus:bg-white"  type="text" placeholder="Observacoes" name="observacoes" required>
 							</div>
 							<div class="w-full md:w-1/2 px-3">
-								<input class="appearance-none block w-full bg-gray-200 text-gray-700 border border-gray-200 rounded py-3 px-4 leading-tight focus:outline-none focus:bg-white focus:border-gray-500"  type="number" placeholder="Cpf" name="cpf" required>
+							<label class="appearance-none block text-xl  text-gray-600  rounded py-1 px-2 leading-tight 0">Nota </label>
+								<input class="appearance-none block w-full bg-gray-200 text-gray-700 border border-gray-200 rounded py-3 px-4 leading-tight focus:outline-none focus:bg-white focus:border-gray-500"  type="text" placeholder="Nota" name="nota" required>
 							</div>
-							<div class="w-full md:w-1/2 px-3">
-								<input class="appearance-none block w-full bg-gray-200 text-gray-700 border border-gray-200 rounded py-3 px-4 leading-tight focus:outline-none focus:bg-white focus:border-gray-500"  type="number" placeholder="idade" name="idade" required>
-							</div>
-							
 					    </div>
                       
-						<div class="flex flex-wrap -mx-3 mb-2">
-							<div class="w-full md:w-1/2 px-2 mb-6 md:mb-0">
-							<input class="appearance-none block w-full bg-gray-200 text-gray-700 border border-gray-200 rounded py-3 px-4 leading-tight focus:outline-none focus:bg-white focus:border-gray-500"  type="text" placeholder="Setor" name="setor" required>
-							</div>
-							<div class="w-full md:w-1/2 px-6 mb-4 md:mb-0">
-								<div class="relative">
-									<select name="funcao" class="block appearance-none w-full bg-gray-200 border border-gray-200 text-gray-700 py-3 px-4 pr-8 rounded leading-tight focus:outline-none focus:bg-white focus:border-gray-500"  required>
-
-											<option value="">Função</option>
-
-											<option value="Aux de Frota">Aux de Frota</option>
-
-											<option value="Aux de Qualidade">Aux de Qualidade</option>
-
-											<option value="Inspetor">Inspetor</option>
-
-											<option value="Supervisor ">Supervisor</option>
-
-											<option value="Mecanico">Mecanico</option>
-
-											<option value="Ass de Frota">Ass de Frota</option>
-
-											<option value="Ass de Qualidade">Ass de Qualidade</option>
-
-											<option value="Motorista">Motorista</option>
-										</select>
-									<div class="pointer-events-none absolute inset-y-0 right-0 flex items-center px-2 text-gray-700">
-									<svg class="fill-current h-4 w-4" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20"><path d="M9.293 12.95l.707.707L15.657 8l-1.414-1.414L10 10.828 5.757 6.586 4.343 8z"/></svg>
-									</div>
-								</div>
-							</div>
-						</div>
      
 						
 						<div class="flex items-center justify-between">

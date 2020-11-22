@@ -3,6 +3,49 @@ include "C:\laragon\www\TCC-Estacio\banco\conexao.php";
 
 ?>
 
+<style>
+		.animated {
+			-webkit-animation-duration: 0;
+			animation-duration: 0;
+			-webkit-animation-fill-mode: both;
+			animation-fill-mode: both;
+		}
+
+		.animated.faster {
+			-webkit-animation-duration: 0ms;
+			animation-duration: 0ms;
+		}
+
+		.fadeIn {
+			-webkit-animation-name: fadeIn;
+			animation-name: fadeIn;
+		}
+
+		.fadeOut {
+			-webkit-animation-name: fadeOut;
+			animation-name: fadeOut;
+		}
+
+		@keyframes fadeIn {
+			from {
+				opacity: 0;
+			}
+
+			to {
+				opacity: 0;
+			}
+		}
+
+		@keyframes fadeOut {
+			from {
+				opacity:0;
+			}
+
+			to {
+				opacity: 0;
+			}
+		}
+	</style>
  <!-- modal div -->
  <div   x-data="{ open: false } ">
 
@@ -20,7 +63,7 @@ include "C:\laragon\www\TCC-Estacio\banco\conexao.php";
 			<div class="modal-content2 py-4 text-left px-6">
 				<!--Title-->
 				<div class="flex justify-between items-center pb-3">
-					<p class="text-2xl font-bold">Insira a placa do veiculo que deseja editar e os dados da alteração</p>
+					<p class="text-2xl font-bold text-gray-600">Insira a placa e os dados para edição</p>
 					<div class="modal-close2 cursor-pointer z-50" @click="open = false">
 						<svg class="fill-current text-black" xmlns="http://www.w3.org/2000/svg" width="18" height="18"
 							viewBox="0 0 18 18">
@@ -38,24 +81,36 @@ include "C:\laragon\www\TCC-Estacio\banco\conexao.php";
                         <div class="flex flex-wrap -mx-3 mb-6">
 							
 							<div class="w-full md:w-1/2 px-3">
+							<label class="appearance-none block   text-gray-600  rounded py-1 px-2 leading-tight 0">Motor </label>
+
 							    <input class="appearance-none block w-full bg-gray-200 text-gray-700 border border-gray-200 rounded py-3 px-4 mb-3 leading-tight focus:outline-none focus:bg-white focus:border-gray-500" type="text" name="moto" id="moto" placeholder="moto" /><br>
 							</div>
 							<div class="w-full md:w-1/2 px-3 mb-6 md:mb-0">
+							<label class="appearance-none block   text-gray-600  rounded py-1 px-2 leading-tight 0">Ano </label>
+
 							    <input class="appearance-none block w-full bg-gray-200 text-gray-700 border border-gray-200 rounded py-3 px-4 mb-3 leading-tight focus:outline-none focus:bg-white focus:border-gray-500" type="text" name="ano" id="ano" placeholder="ano" /><br>
 							</div>
 							<div class="w-full md:w-1/2 px-3 mb-6 md:mb-0">
+							<label class="appearance-none block   text-gray-600  rounded py-1 px-2 leading-tight 0">Chassi </label>
+
 							    <input class="appearance-none block w-full bg-gray-200 text-gray-700 border border-gray-200 rounded py-3 px-4 mb-3 leading-tight focus:outline-none focus:bg-white focus:border-gray-500" type="text" name="chassi" id="chassi" placeholder="chassi"/><br>
 							</div>
 						
 							
 							<div class="w-full md:w-1/2 px-3 mb-6 md:mb-0">
+							<label class="appearance-none block   text-gray-600  rounded py-1 px-2 leading-tight 0">Cor </label>
+
 							    <input class="appearance-none block w-full bg-gray-200 text-gray-700 border border-gray-200 rounded py-3 px-4 mb-3 leading-tight focus:outline-none focus:bg-white focus:border-gray-500" type="text" name="cor" id="cor" placeholder="cor" /><br>
 							</div>
 							<div class="w-full md:w-1/2 px-3 mb-6 md:mb-0">
+							<label class="appearance-none block   text-gray-600  rounded py-1 px-2 leading-tight 0">Placa </label>
+
 							    <input class="appearance-none block w-full bg-gray-200 text-gray-700 border border-gray-200 rounded py-3 px-4 mb-3 leading-tight focus:outline-none focus:bg-white focus:border-gray-500" type="text" name="placa" id="placa" placeholder="placa" /><br>
 							</div>
 							
 							<div class="w-full md:w-1/2 px-3">
+							<label class="appearance-none block   text-gray-600  rounded py-1 px-2 leading-tight 0">Suspenssão </label>
+
 							    <input class="appearance-none block w-full bg-gray-200 text-gray-700 border border-gray-200 rounded py-3 px-4 mb-3 leading-tight focus:outline-none focus:bg-white focus:border-gray-500" type="text" name="suspenssao" id="suspenssao" placeholder="suspenssao"  /><br>
 							</div>
 							

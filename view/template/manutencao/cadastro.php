@@ -18,6 +18,8 @@ $query = "INSERT into `reparo` (`Veiculo_idVec`, `descricaorep`,`tempo_decorrido
 
 mysqli_query($conn, $query) or die(mysqli_error($conn));
 
+header("Location: index.php?page=manutencao");
+
 
 ?>
 

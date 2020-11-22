@@ -17,9 +17,12 @@ include "C:\laragon\www\TCC-Estacio\banco\conexao.php";
   $result  = $conn->query($sql);
 
   if(!$row = $result->fetch_assoc()) {
+    
     $_SESSION['errorLogin']="Usuario ou senha inválida";
-    echo "".$_SESSION['errorLogin'];
-    header("Location: login.php");
+
+    echo "<script>alert('Usuario ou senha incorretos);</script>";
+ 
+    header("Location: index.php");
     
     }else{
     
@@ -33,7 +36,7 @@ include "C:\laragon\www\TCC-Estacio\banco\conexao.php";
       }elseif($_SESSION['funcao'] == "inspetor"){
       header("Location: ../inspecao/index.php");
       }else{
-      
+        
       }
     }
   ?>

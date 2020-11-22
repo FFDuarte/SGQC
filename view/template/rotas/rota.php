@@ -1,9 +1,7 @@
 <script src="https://cdn.jsdelivr.net/gh/alpinejs/alpine@v2.x.x/dist/alpine.js" defer></script>
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
 
-	<?php
-				include "../template/menu/menuTransporte.php"
-	?>
+	
 
 	<script>
 	var closemodal = document.querySelectorAll('.modal-close')

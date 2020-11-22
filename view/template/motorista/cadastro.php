@@ -17,7 +17,7 @@ $query = "INSERT into motorista (`Funcionario_idFuncionario`, `categoria_habilit
 
 mysqli_query($conn, $query) or die(mysqli_error($conn));
 
-header("Location: index.php?page=funcionarios");
+header("Location: index.php?page=motorista");
 ?>
 
 

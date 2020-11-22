@@ -3,6 +3,49 @@ include "C:\laragon\www\TCC-Estacio\banco\conexao.php";
 
 ?>
 
+<style>
+		.animated {
+			-webkit-animation-duration: 0;
+			animation-duration: 0;
+			-webkit-animation-fill-mode: both;
+			animation-fill-mode: both;
+		}
+
+		.animated.faster {
+			-webkit-animation-duration: 0ms;
+			animation-duration: 0ms;
+		}
+
+		.fadeIn {
+			-webkit-animation-name: fadeIn;
+			animation-name: fadeIn;
+		}
+
+		.fadeOut {
+			-webkit-animation-name: fadeOut;
+			animation-name: fadeOut;
+		}
+
+		@keyframes fadeIn {
+			from {
+				opacity: 0;
+			}
+
+			to {
+				opacity: 0;
+			}
+		}
+
+		@keyframes fadeOut {
+			from {
+				opacity:0;
+			}
+
+			to {
+				opacity: 0;
+			}
+		}
+	</style>
  <!-- modal div -->
  <div   x-data="{ open: false } ">
 
@@ -20,7 +63,7 @@ include "C:\laragon\www\TCC-Estacio\banco\conexao.php";
 			<div class="modal-content2 py-4 text-left px-6">
 				<!--Title-->
 				<div class="flex justify-between items-center pb-3">
-					<p class="text-2xl font-bold">Digite a matricula e a categoria do motorista que deseja editar</p>
+					<p class="text-2xl font-bold">Digite os registro que deseja alterar e seus dados</p>
 					<div class="modal-close2 cursor-pointer z-50" @click="open = false">
 						<svg class="fill-current text-black" xmlns="http://www.w3.org/2000/svg" width="18" height="18"
 							viewBox="0 0 18 18">
@@ -32,23 +75,43 @@ include "C:\laragon\www\TCC-Estacio\banco\conexao.php";
 				</div>
 				<!--Body-->
 			
-				<form id="form1" name="form1" method="post" action="editar/editarRotas.php">
-					<input type="number" class="hidden" readonly name="id" id="id" value="<?php echo $id;?>" /><br>
+				<form id="form1" name="form1" method="post" action="editar/editarDecretoveiculo.php">
 					
                         <div class="flex flex-wrap -mx-3 mb-6">
-							
+						    <div class="w-full md:w-1/2 px-3">
+							<label class="appearance-none block   text-gray-600  rounded py-1 px-2 leading-tight 0">Registro </label>
+
+							    <input class="appearance-none block w-full bg-gray-200 text-gray-700 border border-gray-200 rounded py-3 px-4 mb-3 leading-tight focus:outline-none focus:bg-white focus:border-gray-500" type="text" name="id" id="id" placeholder="Registro" /><br>
+							</div>
 							<div class="w-full md:w-1/2 px-3">
-							    <input class="appearance-none block w-full bg-gray-200 text-gray-700 border border-gray-200 rounded py-3 px-4 mb-3 leading-tight focus:outline-none focus:bg-white focus:border-gray-500" type="text" name="matricula" id="matricula" placeholder="Matricula" /><br>
+							<label class="appearance-none block   text-gray-600  rounded py-1 px-2 leading-tight 0">Placa </label>
+
+							    <input class="appearance-none block w-full bg-gray-200 text-gray-700 border border-gray-200 rounded py-3 px-4 mb-3 leading-tight focus:outline-none focus:bg-white focus:border-gray-500" type="text" name="placa" id="placa" placeholder="placa" /><br>
 							</div>
 							<div class="w-full md:w-1/2 px-3 mb-6 md:mb-0">
-							    <input class="appearance-none block w-full bg-gray-200 text-gray-700 border border-gray-200 rounded py-3 px-4 mb-3 leading-tight focus:outline-none focus:bg-white focus:border-gray-500" type="number" name="categoria" id="categoria" placeholder="categoria" /><br>
+							<label class="appearance-none block   text-gray-600  rounded py-1 px-2 leading-tight 0">Inciso </label>
+
+							    <input class="appearance-none block w-full bg-gray-200 text-gray-700 border border-gray-200 rounded py-3 px-4 mb-3 leading-tight focus:outline-none focus:bg-white focus:border-gray-500" type="text" name="inciso" id="inciso" placeholder="inciso" /><br>
 							</div>
-							
-							
+							<div class="w-full md:w-1/2 px-3">
+							<label class="appearance-none block   text-gray-600  rounded py-1 px-2 leading-tight 0">Data </label>
+
+							    <input class="appearance-none block w-full bg-gray-200 text-gray-700 border border-gray-200 rounded py-3 px-4 mb-3 leading-tight focus:outline-none focus:bg-white focus:border-gray-500" type="text" name="data" id="data" placeholder="data" /><br>
+							</div>
+							<div class="w-full md:w-1/2 px-3 mb-6 md:mb-0">
+							<label class="appearance-none block   text-gray-600  rounded py-1 px-2 leading-tight 0">Portaria </label>
+
+							    <input class="appearance-none block w-full bg-gray-200 text-gray-700 border border-gray-200 rounded py-3 px-4 mb-3 leading-tight focus:outline-none focus:bg-white focus:border-gray-500" type="text" name="portaria" id="portaria" placeholder="portaria" /><br>
+							</div>
+							<div class="w-full md:w-1/2 px-3">
+							<label class="appearance-none block   text-gray-600  rounded py-1 px-2 leading-tight 0">Descrição </label>
+
+							    <input class="appearance-none block w-full bg-gray-200 text-gray-700 border border-gray-200 rounded py-3 px-4 mb-3 leading-tight focus:outline-none focus:bg-white focus:border-gray-500" type="text" name="descricao" id="descricao" placeholder="descricão" /><br>
+							</div>
 					    </div>
-						
-                      
+
 					<input type="submit" class="appearance-none block w-full bg-gray-200 text-gray-700 border border-gray-200 rounded py-3 px-4 mb-3 leading-tight focus:outline-none focus:bg-white focus:border-gray-500" onClick="return confirm('Deseja atualizar o registro?');" name="Submit" value="SALVAR ALTERAÇÕES" id="button-form" />
+					
 					<span id="status"></span>
 
 				</form>

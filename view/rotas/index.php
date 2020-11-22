@@ -3,7 +3,13 @@
                'veiculos' => 'veiculos',
                'decretos' => 'decretos',
                'motoristas' => 'motoristas',
-               'programacoes' => 'programacoes'];
+               'programacao' => 'programacao'];
+
+               $decretos = ['decreto rotas' => 'rotas',
+               'decreto veiculos' => 'veiculos'];
+
+               
+
     ?>
     <!DOCTYPE html>
 <html>
@@ -18,43 +24,20 @@
         <title>Manutencão</title>
     
     </head>
-    <body class="text-gray-800 antialiased">
+    <body class="text-gray-800 bg-gradient-to-r from-gray-200 via-gray-400 to-gray-500 px-2 antialiased">
           
         <!-- MENU -->
         <?php
             include "../template/menu/menu.php";
         ?>
       
-        <div class="relative md:ml-48 bg-gradient-to-r from-gray-200 via-gray-400 to-gray-700 px-2">
+        <div class="relative md:ml-48 ">
          <!-- Area onde os eventos do MENU acontecem  -->
            <?php
                 if (isset($_GET['page'])) {
                     $requisicao = $_GET['page'];
                 } else {
-                    $requisicao = 'rotas';
-                }
-                if (isset($_GET['page'])) {
-                    $requisicao = $_GET['page'];
-                } else {
                     $requisicao = 'veiculos';
-                }
-
-                if (isset($_GET['page'])) {
-                    $requisicao = $_GET['page'];
-                } else {
-                    $requisicao = 'decretos';
-                }
-
-                if (isset($_GET['page'])) {
-                    $requisicao = $_GET['page'];
-                } else {
-                    $requisicao = 'motoristas';
-                }
-
-                if (isset($_GET['page'])) {
-                    $requisicao = $_GET['page'];
-                } else {
-                    $requisicao = 'programacoes';
                 }
 
 
@@ -62,7 +45,7 @@
                     case "veiculos":
                         include   "../template/veiculos/veiculo.php" ;
                         break;
-                    case "programacoes":
+                    case "programacao":
                         include   "../template/programacao/programacoes.php" ;
                         break;
                     case "motoristas":
@@ -72,8 +55,25 @@
                         include "../template/rotas/rota.php";
                         break;         
                     case "decretos":
-                        include  "../template/decreto/decreto.php";
+                        include  "../template/decreto/rota/decretosRotas.php";
                         break;  
+                    case "decreto rotas":
+                        include  "../template/decreto/rota/decretosRotas.php";
+                        break;  
+                    case "decreto veiculos":
+                        include  "../template/decreto/veiculo/decretosVeiculos.php";
+                        break;  
+                    case "perfil":
+                        include "../template/perfil/perfil.php";
+                        break; 
+                    case "sair":
+          
+                        
+                             header("Location: ../login/index.php");
+                         
+                        
+
+                         break; 
                     default:
                     include(__DIR__."/404.php");
                 }

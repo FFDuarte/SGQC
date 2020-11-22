@@ -106,7 +106,10 @@
 			    include "editar.php"
 			?>
 			
-		
+			<?php
+			    include "avaliacao.php"
+			?>
+
 
 			<?php
 			    include "registrarManutencao.php"

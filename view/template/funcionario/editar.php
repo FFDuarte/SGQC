@@ -3,6 +3,49 @@ include "C:\laragon\www\TCC-Estacio\banco\conexao.php";
 
 ?>
 
+<style>
+		.animated {
+			-webkit-animation-duration: 0;
+			animation-duration: 0;
+			-webkit-animation-fill-mode: both;
+			animation-fill-mode: both;
+		}
+
+		.animated.faster {
+			-webkit-animation-duration: 0ms;
+			animation-duration: 0ms;
+		}
+
+		.fadeIn {
+			-webkit-animation-name: fadeIn;
+			animation-name: fadeIn;
+		}
+
+		.fadeOut {
+			-webkit-animation-name: fadeOut;
+			animation-name: fadeOut;
+		}
+
+		@keyframes fadeIn {
+			from {
+				opacity: 0;
+			}
+
+			to {
+				opacity: 0;
+			}
+		}
+
+		@keyframes fadeOut {
+			from {
+				opacity:0;
+			}
+
+			to {
+				opacity: 0;
+			}
+		}
+	</style>
  <!-- modal div -->
  <div   x-data="{ open: false } ">
 
@@ -39,21 +82,27 @@ include "C:\laragon\www\TCC-Estacio\banco\conexao.php";
 					
                         <div class="flex flex-wrap -mx-3 mb-6">
 							<div class="w-full md:w-1/2 px-3">
+							<label class="appearance-none block text-xl  text-gray-600  rounded py-1 px-2 leading-tight 0">nome </label>
 							    <input class="appearance-none block w-full bg-gray-200 text-gray-700 border border-gray-200 rounded py-3 px-4 mb-3 leading-tight focus:outline-none focus:bg-white focus:border-gray-500" type="text" name="nome" id="nome"  placeholder ="nome" /><br>
 							</div>
 							<div class="w-full md:w-1/2 px-3 mb-6 md:mb-0">
+							<label class="appearance-none block text-xl  text-gray-600  rounded py-1 px-2 leading-tight 0">Matricula </label>
 							    <input class="appearance-none block w-full bg-gray-200 text-gray-700 border border-gray-200 rounded py-3 px-4 mb-3 leading-tight focus:outline-none focus:bg-white focus:border-gray-500" type="number" name="matricula" id="matricula" placeholder ="matricula"  /><br>
 							</div>
 							<div class="w-full md:w-1/2 px-3 mb-6 md:mb-0">
+							<label class="appearance-none block text-xl  text-gray-600  rounded py-1 px-2 leading-tight 0">Registro </label>
 							    <input class="appearance-none block w-full bg-gray-200 text-gray-700 border border-gray-200 rounded py-3 px-4 mb-3 leading-tight focus:outline-none focus:bg-white focus:border-gray-500" type="number" name="cpf" id="cpf" placeholder ="cpf"   /><br>
 							</div>
 							<div class="w-full md:w-1/2 px-3">
+							<label class="appearance-none block text-xl  text-gray-600  rounded py-1 px-2 leading-tight 0">Registro </label>
 							    <input class="appearance-none block w-full bg-gray-200 text-gray-700 border border-gray-200 rounded py-3 px-4 mb-3 leading-tight focus:outline-none focus:bg-white focus:border-gray-500" type="text" name="funcao" id="funcao" placeholder ="funcao"  /><br>
 							</div>
 							<div class="w-full md:w-1/2 px-3 mb-6 md:mb-0">
+							<label class="appearance-none block text-xl  text-gray-600  rounded py-1 px-2 leading-tight 0">Registro </label>
 							    <input class="appearance-none block w-full bg-gray-200 text-gray-700 border border-gray-200 rounded py-3 px-4 mb-3 leading-tight focus:outline-none focus:bg-white focus:border-gray-500" type="number" name="idade" id="idade"placeholder ="idade"  /><br>
 							</div>
 							<div class="w-full md:w-1/2 px-3">
+							<label class="appearance-none block text-xl  text-gray-600  rounded py-1 px-2 leading-tight 0">Registro </label>
 							    <input class="appearance-none block w-full bg-gray-200 text-gray-700 border border-gray-200 rounded py-3 px-4 mb-3 leading-tight focus:outline-none focus:bg-white focus:border-gray-500" type="text" name="setor" id="setor" placeholder ="setor"  /><br>
 							</div>
 					    </div>

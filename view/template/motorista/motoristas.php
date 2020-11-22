@@ -2,6 +2,7 @@
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
 
 	
+
 	<script>
 	var closemodal = document.querySelectorAll('.modal-close')
 	for (var i = 0; i < closemodal.length; i++) {
@@ -105,7 +106,7 @@
 			
 
 			<?php
-			    include "cadastrarVeiculo.php"
+			    include "cadastroMotorista.php"
 			?>
 
 			
@@ -118,7 +119,6 @@
 			?>
 				
 		</div>
-		<buttom onclick="javascript:window.print();" class="print"> imprimir</buttom>
-
+		
 </div>
 

@@ -1,6 +1,6 @@
 <script src="https://cdn.jsdelivr.net/gh/alpinejs/alpine@v2.x.x/dist/alpine.js" defer></script>
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
-
+<?php  include "../template/menu/menuinspecao.php"  ?>
 
 	<script>
 	var closemodal = document.querySelectorAll('.modal-close')
@@ -85,7 +85,7 @@
 	</script>	
 
 
-<div class="container mx-auto  py- px-10 relative" >
+<div class="container mx-auto  py-10 px-10 relative" >
     
 
 
@@ -103,7 +103,6 @@
 			    include "editar.php"
 			?>
 			
-
 			<?php
 			    include "novaInspecao.php"
 			?>
@@ -111,18 +110,15 @@
 			<?php
 			    include "requisitarManutencao.php"
 			?>
-
-			
 		</div>
 	
 
-		<div class="" style="height: 700px;">
+		<div class="py-8" style="height: 700px;">
 		<?php
 			    include "listaInspecao.php"
 			?>
 				
 		</div>
-		<buttom onclick="javascript:window.print();" class="print"> imprimir</buttom>
 
 </div>
 

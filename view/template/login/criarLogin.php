@@ -27,17 +27,18 @@ $(document).ready(function(){
 </script>
 
 
+
 <style>
 		.animated {
-			-webkit-animation-duration: 1s;
-			animation-duration: 1s;
+			-webkit-animation-duration: 0;
+			animation-duration: 0;
 			-webkit-animation-fill-mode: both;
 			animation-fill-mode: both;
 		}
 
 		.animated.faster {
-			-webkit-animation-duration: 500ms;
-			animation-duration: 500ms;
+			-webkit-animation-duration: 0ms;
+			animation-duration: 0ms;
 		}
 
 		.fadeIn {
@@ -56,13 +57,13 @@ $(document).ready(function(){
 			}
 
 			to {
-				opacity: 1;
+				opacity: 0;
 			}
 		}
 
 		@keyframes fadeOut {
 			from {
-				opacity: 1;
+				opacity:0;
 			}
 
 			to {

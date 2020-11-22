@@ -29,15 +29,15 @@ $(document).ready(function(){
 
 <style>
 		.animated {
-			-webkit-animation-duration: 1s;
-			animation-duration: 1s;
-			-webkit-animation-fill-mode: both;
+			-webkit-animation-duration: 0;
+			animation-duration: 0;
+			-webkit-animation-fill-mode:  both;
 			animation-fill-mode: both;
 		}
 
 		.animated.faster {
-			-webkit-animation-duration: 500ms;
-			animation-duration: 500ms;
+			-webkit-animation-duration: 0ms;
+			animation-duration: 0ms;
 		}
 
 		.fadeIn {
@@ -56,13 +56,13 @@ $(document).ready(function(){
 			}
 
 			to {
-				opacity: 1;
+				opacity: 0;
 			}
 		}
 
 		@keyframes fadeOut {
 			from {
-				opacity: 1;
+				opacity:0;
 			}
 
 			to {
@@ -97,17 +97,21 @@ $(document).ready(function(){
 
 					    <div class="flex flex-wrap -mx-3 mb-6">
 							<div class="w-full px-3">
+							<label class="appearance-none block text-xl  text-gray-600  rounded py-1 px-2 leading-tight 0">Nome </label>
 							<input class=" appearance-none block w-full bg-gray-200 text-gray-700 border border-gray-200 rounded py-3 px-4 mb-3 leading-tight focus:outline-none focus:bg-white focus:border-gray-500" type="text" name="nome" placeholder="Nome Completo"  required/>
 							</div>
 						</div>
                         <div class="flex flex-wrap -mx-3 mb-6">
 							<div class="w-full md:w-1/2 px-3 mb-6 md:mb-0">
+							<label class="appearance-none block text-xl  text-gray-600  rounded py-1 px-2 leading-tight 0">Matricula </label>
 								<input class="appearance-none block w-full bg-gray-200 text-gray-700 border border-gray-200 rounded py-3 px-4 mb-3 leading-tight focus:outline-none focus:bg-white"  type="text" placeholder="Matricula" name="matricula" required>
 							</div>
 							<div class="w-full md:w-1/2 px-3">
+							<label class="appearance-none block text-xl  text-gray-600  rounded py-1 px-2 leading-tight 0">Cpf </label>
 								<input class="appearance-none block w-full bg-gray-200 text-gray-700 border border-gray-200 rounded py-3 px-4 leading-tight focus:outline-none focus:bg-white focus:border-gray-500"  type="number" placeholder="Cpf" name="cpf" required>
 							</div>
 							<div class="w-full md:w-1/2 px-3">
+							<label class="appearance-none block text-xl  text-gray-600  rounded py-1 px-2 leading-tight 0">Idade </label>
 								<input class="appearance-none block w-full bg-gray-200 text-gray-700 border border-gray-200 rounded py-3 px-4 leading-tight focus:outline-none focus:bg-white focus:border-gray-500"  type="number" placeholder="idade" name="idade" required>
 							</div>
 							
@@ -115,9 +119,11 @@ $(document).ready(function(){
                       
 						<div class="flex flex-wrap -mx-3 mb-2">
 							<div class="w-full md:w-1/2 px-2 mb-6 md:mb-0">
+							<label class="appearance-none block text-xl  text-gray-600  rounded py-1 px-2 leading-tight 0">Setor </label>
 							<input class="appearance-none block w-full bg-gray-200 text-gray-700 border border-gray-200 rounded py-3 px-4 leading-tight focus:outline-none focus:bg-white focus:border-gray-500"  type="text" placeholder="Setor" name="setor" required>
 							</div>
 							<div class="w-full md:w-1/2 px-6 mb-4 md:mb-0">
+							<label class="appearance-none block text-xl  text-gray-600  rounded py-1 px-2 leading-tight 0">Função </label>
 								<div class="relative">
 									<select name="funcao" class="block appearance-none w-full bg-gray-200 border border-gray-200 text-gray-700 py-3 px-4 pr-8 rounded leading-tight focus:outline-none focus:bg-white focus:border-gray-500"  required>
 

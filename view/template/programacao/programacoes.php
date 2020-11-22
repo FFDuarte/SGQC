@@ -84,7 +84,6 @@
 	});
 	</script>	
 
-
 <div class="container mx-auto py-6 px-10 relative" >
     
 
@@ -112,13 +111,13 @@
 		</div>
 	
 
-		<div class="py-4" style="height: 700px;">
+		<div class="py-4" style="height: 700px; ">
 		<?php
 			    include "listaProgramacao.php"
 			?>
 				
 		</div>
-		<buttom onclick="javascript:window.print();" class="print"> imprimir</buttom>
-
+		
 </div>
+
 

@@ -5,6 +5,52 @@ include "C:\laragon\www\TCC-Estacio\banco\conexao.php";
 
  <!-- modal div -->
 
+
+
+ <style>
+		.animated {
+			-webkit-animation-duration: 0;
+			animation-duration: 0;
+			-webkit-animation-fill-mode: both;
+			animation-fill-mode: both;
+		}
+
+		.animated.faster {
+			-webkit-animation-duration: 0ms;
+			animation-duration: 0ms;
+		}
+
+		.fadeIn {
+			-webkit-animation-name: fadeIn;
+			animation-name: fadeIn;
+		}
+
+		.fadeOut {
+			-webkit-animation-name: fadeOut;
+			animation-name: fadeOut;
+		}
+
+		@keyframes fadeIn {
+			from {
+				opacity: 0;
+			}
+
+			to {
+				opacity: 0;
+			}
+		}
+
+		@keyframes fadeOut {
+			from {
+				opacity:0;
+			}
+
+			to {
+				opacity: 0;
+			}
+		}
+	</style>
+	
 <div   x-data="{ open: false }" >
 
 <!-- Button (blue), duh! -->
@@ -36,7 +82,9 @@ include "C:\laragon\www\TCC-Estacio\banco\conexao.php";
 					<!--Body-->
 					
 				    <form id="form1" name="form1" method="post" action="excluirProgramacao.php">
-						<Label class="appearance-none block w-full bg-gray-200 text-gray-700 border border-gray-200 rounded py-2 px-2 mb-2 leading-tight focus:outline-none focus:bg-white focus:border-gray-500"> Insira o registro da programação. </label>
+						<Label class="appearance-none block w-full  text-gray-600 py-2 px-2 mb-2 leading-tight focus:outline-none focus:bg-white focus:border-gray-500 text-xl"> Informe o seguinte dado: </label>						     
+						    <label class="appearance-none block   text-gray-600  rounded py-1 px-2 leading-tight 0">Registro </label>
+
 						<input type="number"  class="appearance-none block w-full bg-gray-200 text-gray-700 border border-gray-200 rounded py-2 px-2 mb-2 leading-tight focus:outline-none focus:bg-white focus:border-gray-500" name="registro" id="registro" placeholde="registro"><br>
 								
 						<input type="submit" class="appearance-none block w-full bg-gray-200 text-gray-700 border border-gray-200 rounded py-3 px-4 mb-3 leading-tight focus:outline-none focus:bg-white focus:border-gray-500" onClick="return confirm('Deseja realmente excluir  ?');" name="Submit" value="excluir" id="button-form" />

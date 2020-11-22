@@ -14,6 +14,8 @@ $query = "INSERT into `rotas` (`nome_Rota`, `estado`,`distancia`) values ('$nome
 
 mysqli_query($conn, $query) or die(mysqli_error($conn));
 
+header("Location: index.php?page=rotas");
+
 ?>
 
 

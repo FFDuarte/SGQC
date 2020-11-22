@@ -1,8 +1,15 @@
 <?php
-
+include "C:\laragon\www\TCC-Estacio\banco\conexao.php";
+?>
+<?php
 $conta = ['perfil' => 'perfil',
           'sair' => 'sair' ];
 
+
+
+
+
+             
 ?>
 
 <nav class="bg-white md:left-0 md:block md:fixed md:top-0 md:bottom-0 md:overflow-y-auto md:flex-row md:flex-no-wrap md:overflow-hidden shadow-xl  flex flex-wrap items-center justify-between relative md:w-48 z-10 py-4 px-4">
@@ -14,7 +21,13 @@ $conta = ['perfil' => 'perfil',
                             </div>
                             <a class="md:block text-right md:pb-2 text-gray-700  inline-block text-sm uppercase font-bold p-6 px-8 ">
                             <!-- Nome do Usuario -->
-                            Fabricio
+                            <?php 
+                            $sqlrota = $conn ->query("SELECT nome FROM funcionario where funcao = 'adm' ");
+                            $idrota= mysqli_fetch_array($sqlrota);
+                            $adm=$idrota['nome'];    
+                             echo $adm;
+                             
+                             ?>
                             </a>
                         </div>
                         <?php

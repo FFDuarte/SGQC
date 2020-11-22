@@ -1,4 +1,9 @@
+<?php include "C:\laragon\www\TCC-Estacio\banco\conexao.php"; ?>
+
+
+
 <?php
+
         $paginas = ['dashboard'=>'dashboard',
                     'funcionarios'=>'funcionarios',
                     'transporte'=>'transporte',
@@ -17,12 +22,28 @@
 
         $decretos = ['decreto rotas' => 'rotas',
                        'decreto veiculos' => 'veiculos'];
+        $inspec = ['inspecao' => 'inspecao' , 'reavaliacao' => 'reavaliacao'] ;
 
         $funcionario   = [
-                          'funcionarios'=>'funcionarios','login' => 'login'];
+'funcionarios'=>'funcionarios','login' => 'login'];
         
     
     ?>
+     <?php     
+              
+
+
+              $sql = $conn ->query("SELECT * FROM funcionario where funcao = 'adm' ");
+              $idFuncionario= mysqli_fetch_array($sql);
+              $nome=$idFuncionario['nome'];
+              $matricula=$idFuncionario['matricula'];
+              $idade=$idFuncionario['idade'];
+              $funcao=$idFuncionario['funcao'];
+              $setor=$idFuncionario['setor'];
+              $cpf=$idFuncionario['cpf'];
+          
+          ?>
+
     <!DOCTYPE html>
 <html>
     <head>
@@ -106,12 +127,16 @@
                     case "perfil":
                         include "../template/perfil/perfil.php";
                         break; 
+                    case "reavaliacao":
+                        include "../template/reavaliacao/reavaliacao.php";
+                        break;    
                     case "sair":
           
-                        function logoff(){
-                            session_unset();
-                             header("Location: ../view/login/index.php");
-                         }
+                        
+                             header("Location: ../login/index.php");
+                         
+                        
+
                          break; 
                                 
 

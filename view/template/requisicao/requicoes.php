@@ -1,9 +1,7 @@
 <script src="https://cdn.jsdelivr.net/gh/alpinejs/alpine@v2.x.x/dist/alpine.js" defer></script>
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
 
-	<?php
-				include "../template/menu/menuManutencao.php"
-	?>
+	
 
 	<script>
 	var closemodal = document.querySelectorAll('.modal-close')
@@ -98,14 +96,19 @@
 		
 			</div>
 
-		
-		<div class="" style="height: 700px;">
-		 <?php
+	
+        <?php include "requisitarManutencao.php" ?>
+
+       
+
+
+
+		<div class="py-4" style="height: 700px; ">
+		<?php
 			    include "listaRequisicao.php"
 			?>
 				
 		</div>
-		<buttom onclick="javascript:window.print();" class="print"> imprimir</buttom>
 
 </div>
 

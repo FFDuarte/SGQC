@@ -16,15 +16,15 @@ include "C:\laragon\www\TCC-Estacio\banco\conexao.php";
 		<div class="absolute top-0 left-0 flex items-center justify-center w-full h-full"  x-show="open"  >
 
 			<!-- A basic modal dialog with title, body and one button to close -->
-			<div class="main-modal2 fixed w-full h-100 inset-0 z-50 overflow-hidden flex justify-center items-center animated fadeIn faster"
+			<div class=" fixed w-full h-100 inset-0 z-50 overflow-hidden flex justify-center items-center animated fadeIn faster"
 			style="background: rgba(0,0,0,.7);">
 			<div
 				class="border border-teal-500 shadow-lg modal-container bg-white w-11/12 md:max-w-md mx-auto rounded shadow-lg z-50 overflow-y-auto">
-				<div class="modal2-content py-4 text-left px-8">
+				<div class=" py-4 text-left px-8">
 					<!--Title-->
 					<div class="flex justify-between items-center pb-3">
-						<p class="text-2xl font-bold">Excluir</p>
-						<div class="modal-close2 cursor-pointer z-50" @click="open = false">
+						<p class="text-2xl font-bold text-gray-600">Excluir funcionario</p>
+						<div class=" cursor-pointer z-50" @click="open = false">
 							<svg class="fill-current text-black" xmlns="http://www.w3.org/2000/svg" width="18" height="18"
 								viewBox="0 0 18 18">
 								<path

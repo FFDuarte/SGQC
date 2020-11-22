@@ -3,6 +3,51 @@ include "C:\laragon\www\TCC-Estacio\banco\conexao.php";
 
 ?>
 
+
+
+<style>
+		.animated {
+			-webkit-animation-duration: 0;
+			animation-duration: 0;
+			-webkit-animation-fill-mode: both;
+			animation-fill-mode: both;
+		}
+
+		.animated.faster {
+			-webkit-animation-duration: 0ms;
+			animation-duration: 0ms;
+		}
+
+		.fadeIn {
+			-webkit-animation-name: fadeIn;
+			animation-name: fadeIn;
+		}
+
+		.fadeOut {
+			-webkit-animation-name: fadeOut;
+			animation-name: fadeOut;
+		}
+
+		@keyframes fadeIn {
+			from {
+				opacity: 0;
+			}
+
+			to {
+				opacity: 0;
+			}
+		}
+
+		@keyframes fadeOut {
+			from {
+				opacity:0;
+			}
+
+			to {
+				opacity: 0;
+			}
+		}
+	</style>
  <!-- modal div -->
  <div   x-data="{ open: false } ">
 
@@ -38,25 +83,38 @@ include "C:\laragon\www\TCC-Estacio\banco\conexao.php";
 					<div class="flex flex-wrap -mx-3 mb-6">
 							
 							<div class="w-full md:w-1/2 px-3">
+							<label class="appearance-none block   text-gray-600  rounded py-1 px-2 leading-tight 0">Matricula </label>
+
 							    <input class="appearance-none block w-full bg-gray-200 text-gray-700 border border-gray-200 rounded py-3 px-4 mb-3 leading-tight focus:outline-none focus:bg-white focus:border-gray-500" type="text" name="matricula" id="matricula" placeholder=" Motorista" /><br>
 							</div>
 							<div class="w-full md:w-1/2 px-3 mb-6 md:mb-0">
+							<label class="appearance-none block   text-gray-600  rounded py-1 px-2 leading-tight 0">Placa </label>
+
 							    <input class="appearance-none block w-full bg-gray-200 text-gray-700 border border-gray-200 rounded py-3 px-4 mb-3 leading-tight focus:outline-none focus:bg-white focus:border-gray-500" type="number" name="placa" id="placa" placeholder="placa" /><br>
 							</div>
 							<div class="w-full md:w-1/2 px-3">
+							<label class="appearance-none block   text-gray-600  rounded py-1 px-2 leading-tight 0">Rota </label>
 
 							    <input class="appearance-none block w-full bg-gray-200 text-gray-700 border border-gray-200 rounded py-3 px-4 mb-3 leading-tight focus:outline-none focus:bg-white focus:border-gray-500" type="text" name="rota" id="rota" placeholder="Nome rota" /><br>
 							</div>
 							<div class="w-full md:w-1/2 px-3 mb-6 md:mb-0">
+							<label class="appearance-none block   text-gray-600  rounded py-1 px-2 leading-tight 0">Estado </label>
+
 							<input class="appearance-none block w-full bg-gray-200 text-gray-700 border border-gray-200 rounded py-3 px-4 mb-3 leading-tight focus:outline-none focus:bg-white focus:border-gray-500" type="text" name="estado" id="estado" placeholder="estado" /><br>
 							</div>
 							<div class="w-full md:w-1/2 px-3 mb-6 md:mb-0">
+							<label class="appearance-none block   text-gray-600  rounded py-1 px-2 leading-tight 0">Dia ocorrido </label>
+
 							    <input class="appearance-none block w-full bg-gray-200 text-gray-700 border border-gray-200 rounded py-3 px-4 mb-3 leading-tight focus:outline-none focus:bg-white focus:border-gray-500" type="number" name="dataprog" id="dataprog" placeholder="Data" /><br>
 							</div>
 							<div class="w-full md:w-1/2 px-3">
+							<label class="appearance-none block   text-gray-600  rounded py-1 px-2 leading-tight 0">Previsão de saida </label>
+
 							    <input class="appearance-none block w-full bg-gray-200 text-gray-700 border border-gray-200 rounded py-3 px-4 mb-3 leading-tight focus:outline-none focus:bg-white focus:border-gray-500" type="text" name="prevsaida" id="prevsaida" placeholder="Prev de Saida" /><br>
 							</div>
 							<div class="w-full md:w-1/2 px-3 mb-6 md:mb-0">
+							<label class="appearance-none block   text-gray-600  rounded py-1 px-2 leading-tight 0">Previsão de retorno </label>
+
 							    <input class="modal-close appearance-none block w-full bg-gray-200 text-gray-700 border border-gray-200 rounded py-3 px-4 mb-3 leading-tight focus:outline-none focus:bg-white focus:border-gray-500" type="number" name="prevretorno" id="prevretorno" placeholder="Prev de Retorno" /><br>
 							</div>
 						

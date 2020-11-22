@@ -3,6 +3,49 @@ include "C:\laragon\www\TCC-Estacio\banco\conexao.php";
 
 ?>
 
+<style>
+		.animated {
+			-webkit-animation-duration: 0;
+			animation-duration: 0;
+			-webkit-animation-fill-mode: both;
+			animation-fill-mode: both;
+		}
+
+		.animated.faster {
+			-webkit-animation-duration: 0ms;
+			animation-duration: 0ms;
+		}
+
+		.fadeIn {
+			-webkit-animation-name: fadeIn;
+			animation-name: fadeIn;
+		}
+
+		.fadeOut {
+			-webkit-animation-name: fadeOut;
+			animation-name: fadeOut;
+		}
+
+		@keyframes fadeIn {
+			from {
+				opacity: 0;
+			}
+
+			to {
+				opacity: 0;
+			}
+		}
+
+		@keyframes fadeOut {
+			from {
+				opacity:0;
+			}
+
+			to {
+				opacity: 0;
+			}
+		}
+	</style>
  <!-- modal div -->
 
 <div   x-data="{ open: false }" >
@@ -23,7 +66,7 @@ include "C:\laragon\www\TCC-Estacio\banco\conexao.php";
 				<div class="modal2-content py-4 text-left px-8">
 					<!--Title-->
 					<div class="flex justify-between items-center pb-3">
-						<p class="text-xl font-bold text-gray-600">Excluir motorista</p>
+						<p class="text-2xl font-bold text-gray-600">Excluir decreto</p>
 						<div class="modal-close2 cursor-pointer z-50" @click="open = false">
 							<svg class="fill-current text-black" xmlns="http://www.w3.org/2000/svg" width="18" height="18"
 								viewBox="0 0 18 18">
@@ -35,9 +78,10 @@ include "C:\laragon\www\TCC-Estacio\banco\conexao.php";
 					</div>
 					<!--Body-->
 					
-				    <form id="form1" name="form1" method="post" action="excluirVeiculos.php">
-						<Label class="appearance-none block w-full bg-gray-200 text-gray-700 border border-gray-200 rounded py-2 px-2 mb-2 leading-tight focus:outline-none focus:bg-white focus:border-gray-500"> Insira a matricula do motorista q deseja excluir. </label>
-						<input type="number"  class="appearance-none block w-full bg-gray-200 text-gray-700 border border-gray-200 rounded py-2 px-2 mb-2 leading-tight focus:outline-none focus:bg-white focus:border-gray-500" name="placa" id="placa" placeholde="placa"><br>
+				    <form id="form1" name="form1" method="post" action="excluirDecreto.php">
+						<Label class="appearance-none block w-full text-gray-700  py-2 px-2 mb-2 leading-tight focus:outline-none focus:bg-white focus:border-gray-500"> Insira o registro </label>
+						
+						<input type="number"  class="appearance-none block w-full bg-gray-200 text-gray-700 border border-gray-200 rounded py-2 px-2 mb-2 leading-tight focus:outline-none focus:bg-white focus:border-gray-500" name="id" id="id" placeholde="ID"><br>
 								
 						<input type="submit" class="appearance-none block w-full bg-gray-200 text-gray-700 border border-gray-200 rounded py-3 px-4 mb-3 leading-tight focus:outline-none focus:bg-white focus:border-gray-500" onClick="return confirm('Deseja realmente excluir  ?');" name="Submit" value="excluir" id="button-form" />
 						<span id="status"></span>

@@ -33,10 +33,14 @@ $rotas=$idrotas['id_Rotas'];
 $query = "INSERT INTO `incremento` ( `Motorista_Funcionario_idFuncionario`, `Veiculo_idVec` , `rotas_id_Rotas` , `data_Incremento` , `previsao_Saida` , `previsao_Retorno` ) values ('$motorista', '$veiculo' , '$rotas' , '$dataprog' , '$prevsaida' , '$prevretorno'  )";
 
 if ($conn->query($query) === TRUE) {
-    echo "";
+  header("Location: index.php?page=programacao");
+
   } else {
     echo "Error: " . $sql . "<br>" . $conn->error;
   }
+
+ 
+
 ?>
 
 

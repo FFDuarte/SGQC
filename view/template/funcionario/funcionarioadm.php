@@ -6,11 +6,12 @@
 	?>
 
 	<script>
-	var closemodal = document.querySelectorAll('.modal-close')
-	for (var i = 0; i < closemodal.length; i++) {
-		closemodal[i].addEventListener('click', toggleModal)
-	}
-	onClick="window.print()"
+	    .hidde;
+		var closemodal = document.querySelectorAll('.modal-close')
+		for (var i = 0; i < closemodal.length; i++) {
+			closemodal[i].addEventListener('click', toggleModal)
+		}
+		onClick="window.print()"
 	</script>
 
 	<?php
