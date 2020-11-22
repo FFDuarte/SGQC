@@ -154,7 +154,6 @@
 			?>
 				
 		</div>
-		<buttom onclick="javascript:window.print();" class="print"> imprimir</buttom>
 
 </div>
 

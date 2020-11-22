@@ -21,21 +21,26 @@
                   <div class="text-gray-500 text-center mb-3 font-bold">
                     <small>NETCONTABLE</small>
                   </div>
-              <form class="col s4" action="login.php"   method="post">
-                <h5>Evo System <br><small>faça o login</small></h5>
-                <label for="matricula">Email: </label>
-                <input type="matricula" name="matricula" class="form-control  input-sm chat-input" placeholder="matricula" value="" required><br>
+                      <form class="col s4" action="login.php"   method="post">
+                         <div class="grid grid-cols-6 gap-6">
+                            <div class="col-span-6 sm:col-span-3">
+                              
+                              <label for="matricula" class="block text-xl font-medium text-gray-700">Matricula: </label>
+                              <input type="matricula" name="matricula"  class="mt-2 focus:ring-indigo-500 focus:border-indigo-500 block w-full sm:text-sm border-gray-300 px-2 py-1 rounded-md" placeholder="Matricula" value="" required><br>
+                              <label for="password" class="block text-xl font-medium text-gray-700">Senha: </label>
+                             <input type="senha" name="senha" value=""  class="mt-2 focus:ring-indigo-500 focus:border-indigo-500 block w-full sm:text-sm border-gray-300 px-2 py-1  rounded-md" placeholder="Senha"  required><br>
+                            </div>
+                        </div>
+                      
+                        
+                      
 
-                <label for="password">Senha: </label>
-                <input type="senha" name="senha" value="" class="form-control input-sm chat-input" placeholder="sua senha"  required><br>
-
-
-                <div class="wrapper">
-                    <span class="group-btn">     
-                        <input class="btn btn-primary btn-md center-block" type="submit" name="submit" value="Entrar">
-                    </span>
-                </div>
-            </form>
+                        <div class="wrapper">
+                            <span class="group-btn">     
+                                <input class="mt-2 focus:ring-indigo-500 focus:border-indigo-500 block w-full sm:text-sm border-gray-200 text-gray-900 px-2 py-1 uppercase rounded-md" type="submit" name="submit" value="Entrar">
+                            </span>
+                        </div>
+                    </form>
                 </div>
               </div>
             </div>

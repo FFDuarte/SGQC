@@ -11,6 +11,23 @@
                
 
     ?>
+<?php
+include "C:\laragon\www\TCC-Estacio\banco\conexao.php";
+?>
+<?php     
+              
+
+
+              $sql = $conn ->query("SELECT * FROM funcionario where funcao = 'assrota' ");
+              $idFuncionario= mysqli_fetch_array($sql);
+              $nome=$idFuncionario['nome'];
+              $matricula=$idFuncionario['matricula'];
+              $idade=$idFuncionario['idade'];
+              $funcao=$idFuncionario['funcao'];
+              $setor=$idFuncionario['setor'];
+              $cpf=$idFuncionario['cpf'];
+          
+          ?>
     <!DOCTYPE html>
 <html>
     <head>

@@ -1,10 +1,27 @@
 <?php
+include "C:\laragon\www\TCC-Estacio\banco\conexao.php";
+?>
+<?php
                $paginas = ['inspecao'=>'inspecao',
                             'reavaliacao'=>'reavaliacao','Lista Requicoes' => 'listarequicoes','Veiculos'=>'veiculos'];
 
               
 
     ?>
+     <?php     
+              
+
+
+              $sql = $conn ->query("SELECT * FROM funcionario where funcao = 'inspetor' ");
+              $idFuncionario= mysqli_fetch_array($sql);
+              $nome=$idFuncionario['nome'];
+              $matricula=$idFuncionario['matricula'];
+              $idade=$idFuncionario['idade'];
+              $funcao=$idFuncionario['funcao'];
+              $setor=$idFuncionario['setor'];
+              $cpf=$idFuncionario['cpf'];
+          
+          ?>
     <!DOCTYPE html>
 <html>
     <head>
@@ -47,9 +64,16 @@
                     case "perfil":
                         include "../template/perfil/perfil.php";
                         break; 
+                    case "Veiculos":
+                        include "../template/veiculos/veiculo.php";
+                        break; 
+                    case "Lista Requicoes":
+                        include "../template/requisicao/requicoes.php";
+                        break;             
                     case "sair":
                         header("Location: ../login/index.php");
                         break; 
+                        
                     default:
                     include(__DIR__."/404.php");
                 }

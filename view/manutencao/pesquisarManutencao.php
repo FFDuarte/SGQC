@@ -9,10 +9,10 @@
 	$msg .="<table class='border-collapse table-auto w-full whitespace-no-wrap  table-striped relative bg-gray-200 ' >";
 	$msg .="	<thead>";
 	$msg .="		<tr>";
-	$msg .="			<th class='bg-gray-500 border-r-2 border-gray-600  text-gray-900 font-bold  uppercase text-xs'>Registro:</th>";
-	$msg .="			<th class='bg-gray-500 border-r-2 border-gray-600  text-gray-900 font-bold  uppercase text-xs'>Veiculo:</th>";
-	$msg .="			<th class='bg-gray-500 border-r-2 border-gray-600   py-2 text-gray-900 font-bold  uppercase text-xs'>Descrição</th>";
-	$msg .="			<th class='bg-gray-500  py-2 text-gray-900 font-bold uppercase text-xs'>Tempo Decorrido</th>";
+	$msg .="			<th class='bg-gray-500 border-r-2 border-gray-600 px-4  py-2 text-gray-900 font-bold  uppercase text-xs'>Registro:</th>";
+	$msg .="			<th class='bg-gray-500 border-r-2 border-gray-600 px-4  py-2 text-gray-900 font-bold  uppercase text-xs'>Veiculo:</th>";
+	$msg .="			<th class='bg-gray-500 border-r-2 border-gray-600   px-4  py-2 text-gray-900 font-bold  uppercase text-xs'>Descrição</th>";
+	$msg .="			<th class='bg-gray-500  px-4  py-2 text-gray-900 font-bold uppercase text-xs'>Tempo Decorrido</th>";
 	
 	$msg .="		</tr>";
 	$msg .="	</thead>";

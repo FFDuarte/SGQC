@@ -5,23 +5,12 @@
 <div class="m-40">
   <div class="md:grid md:grid-cols-3 md:gap-6 px-48">
     <div class="mt-5 md:mt-0 md:col-span-2">
-      <form  method="POST" action="editar/editarPerfil.php">
-             
+          
 
+      <form  method="POST" action="editar/editarPerfil.php">
             <div class="shadow overflow-hidden sm:rounded-md">
                <div class="px-4 py-5 bg-white sm:p-6">
-                      <div>
-                        <div class=" flex items-center m-2">
-                          <span class="inline-block h-16 w-16 rounded-full overflow-hidden ">
-                            <svg class="h-full w-full text-gray-300" fill="currentColor" viewBox="0 0 24 24">
-                              <path d="M24 20.993V24H0v-2.996A14.977 14.977 0 0112.004 15c4.904 0 9.26 2.354 11.996 5.993zM16.002 8.999a4 4 0 11-8 0 4 4 0 018 0z" />
-                            </svg>
-                          </span>
-                          <button type="button" class="ml-5 bg-white py-2 px-3 border border-gray-300 rounded-md shadow-sm text-sm leading-4 font-medium text-gray-700 hover:bg-gray-50 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500">
-                            Alterar Imagem
-                          </button>
-                        </div>
-                      </div>
+
                       <div class="grid grid-cols-6 gap-6">
                         <div class="col-span-6 sm:col-span-3">
                           <label for="first_name" class="block text-sm font-medium text-gray-700">Nome</label>

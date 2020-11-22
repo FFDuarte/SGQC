@@ -1,34 +1,39 @@
+<?php include "C:\laragon\www\TCC-Estacio\banco\conexao.php"; ?>
+
+
+
 <?php
-include "C:\laragon\www\TCC-Estacio\banco\conexao.php";
-?>
-    <?php
-       $paginas = ['dashboard'=>'dashboard',
-       'transporte'=>'transporte',
-       'manutencao'=>'clientes',
-       'inspecao'=>'inspecao',
-       'decreto' => 'decreto'];
 
-$transporte = ['rotas'=>'rotas',
-      'veiculos' => 'veiculos',
-      'motorista' => 'motorista',
-      'programacao' => 'programacao'];
-   
+        $paginas = ['dashboard'=>'dashboard',
+                    'funcionarios'=>'funcionarios',
+                    'transporte'=>'transporte',
+                    'manutencao'=>'clientes',
+                    'inspecao'=>'inspecao',
+                    'decreto' => 'decreto'];
 
-$manutencao = ['manutencoes' => 'manutencoes',
-          'requisicoes' => 'requisicoes'];
+        $transporte = ['rotas'=>'rotas',
+                   'veiculos' => 'veiculos',
+                   'motorista' => 'motorista',
+                   'programacao' => 'programacao'];
+                
+      
+        $manutencao = ['manutencoes' => 'manutencoes',
+                       'requisicoes' => 'requisicoes'];
 
-$decretos = ['decreto rotas' => 'rotas',
-          'decreto veiculos' => 'veiculos'];
-$inspec = ['inspecao' => 'inspecao' , 'reavaliacao' => 'reavaliacao'] ;
+        $decretos = ['decreto rotas' => 'rotas',
+                       'decreto veiculos' => 'veiculos'];
+        $inspec = ['inspecao' => 'inspecao' , 'reavaliacao' => 'reavaliacao'] ;
 
-                    
+        $funcionario   = [
+'funcionarios'=>'funcionarios','login' => 'login'];
+        
     
     ?>
-    <?php     
+     <?php     
               
 
 
-              $sql = $conn ->query("SELECT * FROM funcionario where funcao = 'supervisor' ");
+              $sql = $conn ->query("SELECT * FROM funcionario where funcao = 'adm' ");
               $idFuncionario= mysqli_fetch_array($sql);
               $nome=$idFuncionario['nome'];
               $matricula=$idFuncionario['matricula'];
@@ -38,7 +43,7 @@ $inspec = ['inspecao' => 'inspecao' , 'reavaliacao' => 'reavaliacao'] ;
               $cpf=$idFuncionario['cpf'];
           
           ?>
-    
+
     <!DOCTYPE html>
 <html>
     <head>
@@ -49,17 +54,21 @@ $inspec = ['inspecao' => 'inspecao' , 'reavaliacao' => 'reavaliacao'] ;
     
         <link  href=<?php echo "\"http://" . $_SERVER['SERVER_NAME'] . "/TCC-Estacio/styles/style.css\"" ?> rel="stylesheet" type="text/css" media="screen"  >
 
-        <title>Pagina Supervisor</title>
+        <title>ADM</title>
     
     </head>
     <body class="text-gray-800 bg-gradient-to-r from-gray-200 via-gray-400 to-gray-500 px-2 antialiased">
           
         <!-- MENU -->
         <?php
-            include "../template/menu/menu.php";
+            include "../template/menu/menuadm.php";
+            
         ?>
+        
+
       
-        <div class="relative md:ml-48">
+        <div class="relative md:ml-48  ">
+   
          <!-- Area onde os eventos do MENU acontecem  -->
             <?php
     
@@ -68,67 +77,69 @@ $inspec = ['inspecao' => 'inspecao' , 'reavaliacao' => 'reavaliacao'] ;
                 } else {
                     $requisicao = 'dashboard';
                 }
-                
-               
+
                 switch($requisicao) {
+                    case "funcionarios":
+                        include   "../template/funcionario/funcionarioadm.php" ;
+                        break;
                     case "dashboard":
                         include   "../template/dashboard/dashboard.php" ;
                         break;
                     case "rotas":
-                        include   "../template/rotas/rotas.php" ;
+                        include "../template/rotas/rotas.php";
                         break;   
                     case "manutencao":
-                        include   "../template/manutencao/manutencao.php" ;
+                        include "../template/manutencao/manutencao.php";
                         break;         
                     case "inspecao":
-                        include   "../template/inspecao/inspecao.php" ;
+                        include  "../template/inspecao/inspecao.php";
                         break;  
                     case "veiculos":
-                        include   "../template/veiculos/veiculos.php" ;
+                        include "../template/veiculos/veiculos.php";
                         break;  
                     case "decreto":
                         include   "../template/decreto/veiculo/decretosVeiculos.php" ;
                          break;
                     case "transporte":
-                        include   "../template/rotas/rotas.php" ;
+                        include "../template/rotas/rotas.php";
                         break;
                     case "motorista":
                         include   "../template/motorista/motorista.php" ;
                         break;
-                    case "incremento":
-                        include   "../template/programacao/programacao.php" ;
+                    case "programacao":
+                        include "../template/programacao/programacao.php";
+                        break;   
+                    case "requisicoes":
+                        include "../template/requisicao/requisicao.php";
                         break; 
                     case "manutencoes":
-                        include   "../template/manutencao/manutencao.php" ;
-                        break;     
-                    case "requisicoes":
-                        include   "../template/requisicao/requisicao.php" ;
-                        break;  
-                    case "programacao":
-                        include   "../template/programacao/programacao.php" ;
-                        break; 
-                    case "perfil":
-                            include "../template/perfil/perfil.php";
-                            break; 
+                        include "../template/manutencao/manutencao.php";
+                        break;   
                     case "decreto veiculos":
                         include "../template/decreto/veiculo/decretosVeiculos.php";
                         break;
                     case "decreto rotas":
                         include "../template/decreto/rota/decretosRotas.php";
                         break;  
+                    case "login":
+                        include "../template/login/login.php";
+                        break; 
+                    case "perfil":
+                        include "../template/perfil/perfil.php";
+                        break; 
                     case "reavaliacao":
                         include "../template/reavaliacao/reavaliacao.php";
-                        break;      
-                        
-                        
+                        break;    
                     case "sair":
-              
-                            
-                                 header("Location: ../login/index.php");
-                             
-                            
-    
-                             break;                                   
+          
+                        
+                             header("Location: ../login/index.php");
+                         
+                        
+
+                         break; 
+                                
+
                     default:
                     include(__DIR__."/404.php");
                 }
